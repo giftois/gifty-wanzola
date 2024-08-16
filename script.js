@@ -19,12 +19,30 @@ light.addEventListener("click", lightMode);
 
 //! About Me Button Code
 const aboutMeBox = document.getElementById("aboutMeBox");
+const aboutMe = document.getElementById("aboutMe");
 const heroArrow = document.getElementById("heroArrow");
+const pageDivider = document.getElementById("pageDivider");
+const techStack = document.getElementById("techStack");
+const codingLanguages = document.getElementsByClassName("codingLanguages");
 
 const displayAbout = () => {
     aboutMeBox.style.cssText = `
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     `;
+    aboutMe.style.cssText = `
+    display: block;
+    `;
+    pageDivider.style.cssText = `
+    display: block;
+    `;
+    techStack.style.cssText = `
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    `;
+
 }
 
 heroArrow.addEventListener("click", displayAbout);

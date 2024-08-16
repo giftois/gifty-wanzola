@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Arbutus%20Slab:700|Bellota%20Text:400');
-
-/* General Styling */
+@import url('https://fonts.googleapis.com/css?family=Antic%20Slab:700|Montserrat:400');/* General Styling */
 :root {
 --text: #f1eae3;
 --background: hsl(34, 44%, 7%);
@@ -23,19 +22,15 @@
     color: var(--background);
 }
 
-h1, h2, h4, h5 {
+h2, h4, h5 {
   color: var(--background);
 }
 
-h1 {  font-size: 75px; font-family: "montserrat", sans-serif; }
+h1 {  font-family: "montserrat", sans-serif; font-weight: 700; font-size: 4.21rem;}
 h2 {  font-size: 30px; }
 
 li {
     list-style: none;
-}
-
-a, p {
-    font-weight: 400;
 }
 
 body {
@@ -48,7 +43,7 @@ body {
 .nameBarBox {
     background-color: var(--primaryLighter);
     border-bottom: var(--primaryLighter) solid 2px;
-    box-shadow: 0 0 10px var(--primaryLighter);
+    box-shadow: 0 0 1px black;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -61,6 +56,7 @@ body {
 }
 
 #nameBarBoxDupe {
+    display: none;
     background-color: var(--primary);
     width: 100%;
     top: 0;
@@ -77,45 +73,25 @@ body {
 }
 
 #g-icon {
-    margin: 0 10px;
-    color: var(--primaryLighter);
+    color: var(--background);
     font-size: 1.1rem;
-    background-color: var(--background);
-    border-radius: 40px;
-    padding: 10px 11px;
-    border: solid black 2px;
 }
-
+#g-icon-holder {
+    padding: 10px; margin: 0 10px;    
+    border: solid black 2px;
+    background-color: goldenrod;
+}
 #name {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer; color: var(--primary);
-    letter-spacing: 3px; 
-
-    font-size: 1.2rem;
+    letter-spacing: 1px; 
+    font-weight: 400;
+    font-size: 1.3rem;
     color: var(--background);
     opacity: 100%;
 
-}
-
-
-.fa-brands {
-    text-decoration: none;
-    font-size: 2rem;
-    font-style: none;
-    color: var(--primaryLighter);
-}
- .fa-git-alt{
-    color: hsl(24, 100%, 55%);
-}
-
-.fa-database {
-    color: hsl(183, 57%, 49%);
-}
-
-.fa-code {
-    font-size: 1.2rem;
 }
 
 #topBar-items {
@@ -201,6 +177,12 @@ body {
 
 
 /* Main */
+#heroToCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 /* ? Hero Section */
 /* ! Hero Section Left side (Image) */
 .hero-card {
@@ -208,7 +190,8 @@ body {
     grid-template-columns: repeat(13, 1fr);
     gap: 5px;
     height:84vh;
-    width: 100vw;
+    width: 90vw;
+    box-shadow: 0 0 1px black;
     /* display: none; */
 }
 
@@ -245,6 +228,8 @@ body {
 .img-container img {
     width: 100%;
     height: 100%;
+    position: relative;
+    left: 0;
     object-fit:cover;
 }
 /* ! Hero Right Side (text) */
@@ -289,96 +274,108 @@ body {
 /* ! End of Button Section */
 /* ? end of hero */
 
+#pageDivider {
+    width: 100vw;
+    height: 8vh;
+    background-color: var(--background);
+    display: none;
+    z-index: 1000;
+}
 /* ? About Me Section */
+#aboutToCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #aboutMeBox {
     display: none;
     padding: 20px;
-    background-color: #d6bd971f;
+
     font-size: 1.2rem;
     cursor: default;
-    height:84vh;
-    width: 100vw;
+    height: 92vh;
+    width: 80vw;
     
 }
 
 #aboutMe {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: space-between;
-
-}
-
-#aboutMeContent {
-    margin: 25px 75px;
-    padding: 20px 50px;
-    grid-column: 2 / span 4;
+    display: flex;
+    text-align:center;
 }
 
 #aboutMeHeader {
     grid-column: span 1;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     color: var(--primaryLighter);
-    margin: 25px 50px;
 
 }
 /* ! Tech Stack Section */
-#techStack {
-    display: flex;
-    padding: 20px;
-    justify-content: space-around;
-
-}
 
 #techStackHeaderBox {
-    background-color: var(--primary);
     text-align: center;
     font-size: 1.5rem;
-    padding: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+
     color: var(--primary);
+    background-color: goldenrod;
+    border: 2px solid var(--background);
+    width: 410px;
 }
 
 #techStackHeader {
-    color: var(--secondary);
+    color: var(--background);
     font-weight: bolder;
+    font-size: 1.5rem;
     letter-spacing: 1px;
 }
 
 #techStackBox {
-    display: none;
     flex-direction: column;
-    gap: 10px;
-    border: solid 2px var(--accent);
-    margin: 0 10px 10px 10px;
+    box-shadow: 0 0 5px var(--background);
     cursor: default;
-    padding-bottom: 36px;
+    margin-left: 100px;
     /* display: none; */
 
 }
+#techStack {
+    height: 410px;
+    width: 410px;
+}
+.codingLanguages {
+    grid-column: span 2;
+}
 
+/* ! Tech Stack Icon Styling */
+.icon {
+    gap: 5px;
+    color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.icon:hover, #light:hover, #dark:hover, #g-icon-holder:hover { 
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.1);
+}
 .fa-js {
-    color: hsl(54, 73%, 0%);
+    color: rgb(243, 184, 36);
+
 }
 
 .fa-react {
     color: hsl(183, 57%, 49%);
 }
-
-.icon {
-
-    padding: 5px 15px;
-    gap: 10px;
-    color: var(--background);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .fa-python {
-    color: hsl(54, 73%, 0%);
+    color: rgb(243, 184, 36);
+
 }
 .fa-css3-alt {
     color: hsl(220, 89%, 65%);
@@ -390,12 +387,35 @@ body {
 .fa-node-js {
     color: hsl(79, 73%, 25%);
 }
+.fa-brands {
+    text-decoration: none;
+    font-size: 2rem;
+    font-style: none;
+}
+ .fa-git-alt{
+    color: hsl(24, 100%, 55%);
+}
+
+.fa-database {
+    color: hsl(183, 57%, 49%);
+}
+
+.fa-code {
+    font-size: 1.2rem;
+}
 /* ? End of About Section */
 
-
+#footerToCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+}
 #footerBox {
     display: flex;
     justify-content: end;
+    width: 90vw;
     background-color: var(--background);
 }
 
@@ -403,7 +423,7 @@ body {
     display: flex;
     align-items: space-around;
     gap: 50px;
-    margin: 15px;
+    height: 8vh;
 }
 
 #socialmedia .fa-brands:hover {
@@ -411,4 +431,7 @@ body {
 }
 #socialmedia .fa-brands:active {
     color: gold;
+}
+.social-icons {
+    color: var(--primary);
 }
