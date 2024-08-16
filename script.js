@@ -1,5 +1,6 @@
 // ! Global Selectors 
 const body = document.querySelector('body');
+const main = document.getElementById("mainSection");
 
 // ! Header Variables 
 const homeNav = document.getElementById('homeNav');
@@ -21,14 +22,18 @@ const header = document.getElementById("nameBarBox");
 const heroTop = document.getElementById("nameBarBoxDupe");
 const heroBox = document.getElementById("heroBox");
 const heroArrow = document.getElementById("heroArrow");
+const heroPageDividerBottom = document.getElementById("heroPageDividerBottom");
 const heroPageDivider = document.getElementById("heroPageDivider");
+
 
 //! About Me Section Variable Declarations
 const aboutToCenter = document.getElementById("aboutToCenter");
 const aboutMeOuterBox = document.getElementById("aboutMeOuterBox");
 const aboutMeBox = document.getElementById("aboutMeBox");
-const aboutMe = document.getElementById("aboutMe");    
+const aboutMe = document.getElementById("aboutMe");
+const aboutMeContent = document.getElementById("aboutMeContent");
 const aboutArrowBox = document.getElementById("aboutArrowBox");
+const aboutPageDividerBottom = document.getElementById("aboutPageDividerBottom");
 const aboutPageDivider = document.getElementById("aboutPageDivider");
 
 //  Tech Stack Section Variable Declarations
@@ -56,15 +61,12 @@ const darkMode = () => {
     background-color: var(--darkModeDark);
     color: var(--primaryLighter);
     `
+    main.style.cssText = `
+    box-shadow: 0 0 2px white;
+    `
     header.style.cssText = `
     background-color: rgba(23,22,18,0.9);
-    box-shadow: 0 0 1px white;
-    `
-    heroBox.style.cssText = `
-    box-shadow: 0 0 1px white;
-    `
-    aboutMeOuterBox.style.cssText = `
-    box-shadow: 0 0 1px white;
+    box-shadow: 0 0 2px white;
     `
     techStackBox.style.cssText = `
     box-shadow: 0 0 5px black;
@@ -76,9 +78,7 @@ const darkMode = () => {
     jsIcon.style.cssText = `
     color: gold;
     `
-    projectsBox.style.cssText = `
-    box-shadow: 0 0 1px white;
-    `
+
     footerBox.style.cssText = `
     background-color: hsl(45,17%,5%);
     `
@@ -98,15 +98,12 @@ const lightMode = () => {
     background-color: var(--primaryLighter);
     color: var(--darkModeDark);
     `
+    main.style.cssText = `
+    box-shadow: 0 0 2px black;
+    `
     header.style.cssText = `
     background-color: var(--primaryLighter);
-    box-shadow: 0 0 1px black;
-    `
-    heroBox.style.cssText = `
-    box-shadow: 0 0 1px black;
-    `
-    aboutMeOuterBox.style.cssText = `
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 2px black;
     `
     techStackBox.style.cssText = `
     box-shadow: 0 0 5px var(--darkModeDark);
@@ -117,9 +114,6 @@ const lightMode = () => {
     `
     jsIcon.style.cssText = `
     color: black;
-    `
-    projectsBox.style.cssText = `
-    box-shadow: 0 0 1px black;
     `
     footerBox.style.cssText = `
     background-color: hsl(45,17%,5%);
@@ -138,7 +132,7 @@ const toAbout = () => {
     `;
 
     aboutArrowBox.style.cssText = `
-    display
+    display: block;
     `;
     aboutMeBox.style.cssText = `
     display: flex;
@@ -151,6 +145,9 @@ const toAbout = () => {
     heroPageDivider.style.cssText = `
     display: flex;
     `;
+    heroPageDividerBottom.style.cssText = `
+    display: flex;
+    `;
     techStack.style.cssText = `
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -158,7 +155,7 @@ const toAbout = () => {
     footerBox.style.cssText = `
     display: none;
     `
-    heroPageDivider.scrollIntoView({ behavior: 'smooth' });
+    heroPageDividerBottom.scrollIntoView({ behavior: 'smooth' });
 }
 // Scroll to Projects
 const toProjects = () => {
@@ -170,6 +167,9 @@ const toProjects = () => {
     `;
 
     aboutPageDivider.style.cssText = `
+    display: flex;
+    `;
+    aboutPageDividerBottom.style.cssText = `
     display: flex;
     `;
     footerBox.style.cssText = `

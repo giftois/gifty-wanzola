@@ -3,7 +3,7 @@
 :root {
 --text: #f1eae3;
 --darkModeDark: hsl(45, 17%, 9%);
---backgroundTP: rgba(229, 213, 189, 0.90);
+--backgroundTP: rgba(220, 202, 172, 0.90);
 --background: hsl(34, 44%, 7%);
 --primary: hsl(36, 43%, 72%);
 --primaryLighter: hsl(36, 43%, 82%);
@@ -17,15 +17,13 @@
 }
 
 * {
-    margin: auto 0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: "montserrat", sans-serif;
 }
 
-.darkMode {
-}
 
 h1 {  font-size: 4.21rem;}
 h2 {  font-size: 50px; }
@@ -43,27 +41,22 @@ body {
 /* Header */
 #nameBarBox {
     background-color: var(--backgroundTP);
-    box-shadow: 0 0 1px black;
-    padding: 15px;
+    box-shadow: 0 0 2px black;
+    height: 8vh;
     display: flex;
     justify-content: space-between;
     z-index: 1000;
-
+    align-items: center;
     position: sticky;
     top: 0;
     width: 100%;
     backdrop-filter: blur(5px);
 }
 
-#nameBarBoxDupe {
-    top: 0;
-}
-
 #nameBar {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 100%;
 }
 #g-icon-holder:hover { 
     transition: all 0.1s ease-in-out;
@@ -114,13 +107,6 @@ body {
 
 }
 
-#light:hover {
-
-}
-
-#dark:hover {
-
-}
 
 .headerNavs {
     padding: 0px 20px;
@@ -167,6 +153,16 @@ body {
 
 
 /* Main */
+#mainSection {
+    box-shadow: 0 0 2px black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+
+}
 #heroToCenter {
     display: flex;
     flex-direction: column;
@@ -178,10 +174,9 @@ body {
 #heroBox {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
-    gap: 5px;
-    height:84vh;
-    width: 90vw;
-    box-shadow: 0 0 1px black;
+    height:92vh;
+
+    align-content: center;
     /* display: none; */
 }
 
@@ -190,7 +185,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    grid-column: 3 / span 2;
+    grid-column: span 6;
 
 }
 
@@ -233,14 +228,38 @@ body {
     align-items: center;
     text-align: center;
     
-    grid-column: 6 / span 6;
-    margin-left: 50px;
+    grid-column: 7 / span 6;
+
 }
+/* ! First order of business tomorrow */
+/*  #socialMediaHeroBox {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    grid-column: 12 /span 1;
+    background-color: red;
+
+}
+
+#socialMediaHero {
+    position: relative;
+    gap: 50px;
+} 
+.socialIconsHero {
+    color: var(--darkModeDark);
+} */
 
 .heroText {
     font-size: 1.25rem;
     padding: 10px;
     cursor: default;
+    color: rgb(50, 4, 4)
+}
+.highlightText {
+    color: black;
+    font-size: 1.3rem;
+    text-decoration: underline;
 }
 
 
@@ -267,20 +286,6 @@ body {
 /* ! End of Button Section */
 /* ? end of hero */
 
-#heroPageDivider, #aboutPageDivider {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: hsl(45,17%,5%);   
-    box-shadow: 0 0 1px white;
-}
-#heroPageDivider div, #aboutPageDivider div {
-    width: 90vw;
-    height: 8vh;
-    background-color: hsl(45,17%,5%);   
-}
-
 /* ? About Me Section */
 #aboutToCenter {
     display: none;
@@ -288,33 +293,32 @@ body {
     justify-content: center;
     align-items: center;
 }
-#aboutMeOuterBox {
+
+#aboutMeBox {
+    display: none;
+    padding: 0 100px;
+    margin: 0;
+    font-size: 1.2rem;
+    cursor: default;
+    height: 92vh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutMe {
+    text-align:left;
+}
+
+#aboutMeHeaderBox {
+    text-align: center;
+}
+#aboutMeContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    height: 91vh;
-    width: 90vw;
-    box-shadow: black 0 0 1px;
-}
-#aboutMeBox {
-    display: none;
-    padding: 0 100px;
-    font-size: 1.2rem;
-    cursor: default;
-
-}
-
-#aboutMe {
-    text-align:center;
-}
-
-#aboutMeHeaderBox {
-    grid-column: span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* ! Tech Stack Section */
@@ -408,6 +412,11 @@ body {
 }
 /* ! Landing page Down button*/
 #aboutArrowBox {
+    margin: 30px 0;
+}
+#aboutArrowBox li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
 
 }
 
@@ -421,6 +430,7 @@ body {
     font-size: 1.2rem;
     padding: 10px 15px;
     cursor:pointer;
+    margin-left: 20px;
 }
 #aboutArrow:hover {
     background-color: hsl(45, 17%, 24%);   
@@ -448,9 +458,8 @@ body {
     display: none;
     font-size: 1.2rem;
     cursor: default;
-    width: 90vw;
-    height: 92vh;
-    box-shadow: 0 0 1px black;
+    height: 84vh;
+
 }
 
 #footerToCenter {
@@ -461,8 +470,10 @@ body {
     background-color: hsl(45,17%,5%);   
 }
 #footerBox {
-    display: flex;
+    position:relative;
+    display: none;
     justify-content: end;
+    align-items: center;
     width: 90vw;
     height: 8vh;
     background-color: hsl(45,17%,5%);   
@@ -472,7 +483,7 @@ body {
     display: flex;
     align-items: space-around;
     gap: 50px;
-    height: 8vh;
+
 }
 
 #socialmedia .fa-brands:hover {
