@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Antic%20Slab:700|Montserrat:400');/* General Styling */
 :root {
 --text: #f1eae3;
+--darkModeDark: hsl(45, 17%, 9%);
+--backgroundTP: rgba(229, 213, 189, 0.90);
 --background: hsl(34, 44%, 7%);
 --primary: hsl(36, 43%, 72%);
 --primaryLighter: hsl(36, 43%, 82%);
@@ -20,15 +22,13 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: "montserrat", sans-serif;
-    color: var(--background);
 }
 
-h2, h4, h5 {
-  color: var(--background);
+.darkMode {
 }
 
-h1 {  font-family: "montserrat", sans-serif; font-weight: 700; font-size: 4.21rem;}
-h2 {  font-size: 30px; }
+h1 {  font-size: 4.21rem;}
+h2 {  font-size: 50px; }
 
 li {
     list-style: none;
@@ -36,24 +36,23 @@ li {
 
 body {
     background-color: var(--primaryLighter);
-    color: var(--text);
+    color: var(--background);
 }
 
 
 /* Header */
-.nameBarBox {
-    background-color: var(--primaryLighter);
-    border-bottom: var(--primaryLighter) solid 2px;
+#nameBarBox {
+    background-color: var(--backgroundTP);
     box-shadow: 0 0 1px black;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     z-index: 1000;
-    opacity: 95%;
+
     position: sticky;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(50%);
+    backdrop-filter: blur(5px);
 }
 
 #nameBarBoxDupe {
@@ -66,6 +65,10 @@ body {
     align-items: center;
     opacity: 100%;
 }
+#g-icon-holder:hover { 
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.1);
+}
 
 #g-icon {
     color: var(--background);
@@ -73,20 +76,19 @@ body {
 }
 #g-icon-holder {
     padding: 10px; margin: 0 10px;    
-    border: solid black 2px;
+    border: solid black 3px;
     background-color: goldenrod;
+    cursor: pointer;
 }
 #name {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer; color: var(--primary);
+    cursor: default;
     letter-spacing: 1px; 
     font-weight: 400;
     font-size: 1.3rem;
-    color: var(--background);
     opacity: 100%;
-
 }
 
 #topBar-items {
@@ -95,14 +97,15 @@ body {
     text-transform:uppercase;
 }
 #dark {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 0 20px;
     padding: 0 10px;
+    color: var(--background);
     cursor: pointer;
 }
 
 #light {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 0 20px;
     padding: 0 10px;
     cursor: pointer;
@@ -119,23 +122,21 @@ body {
 
 }
 
-.h-navs a {
-    color: var(--background);
+.headerNavs {
     padding: 0px 20px;
     margin-right: 5px;
-    box-shadow: 0 0 10px var(--primaryLighter);
     cursor: pointer;
 }
 
 #contactButton {
-    border: var(--background) solid 2px;
-    box-shadow: 0 0 2px black;
-    background-color: var(--background);
+    border: black solid 3px;
+
+    background-color: goldenrod; 
     margin: 0 10px;
-    color: var(--primaryLighter);
+    color: var(--darkModeDark);
     font-size: 1rem;
 }
-#contactButton, #m-button {
+#contactButton {
     position: relative;
     font-size: 1rem;
     padding: 10px 15px;
@@ -143,14 +144,14 @@ body {
     cursor: pointer;
 }
 #contactButton:hover {
-    background-color: goldenrod;
-    border: var(--background) solid 2px;
-    box-shadow: 0 0 2px black;
+    background-color: hsl(45, 17%, 24%);
+    border: black solid 3px;
+    box-shadow: 0 0 1px black;
     opacity: 90%;
-    color: var(--background);
+    color: var(--primaryLighter);
 }
 
-.h-navs a:hover {
+.headerNavs:hover {
     color: black;
     transform: translateY(-2px);
     padding: 0 19px;
@@ -160,7 +161,7 @@ body {
 
 }
 
-.h-navs a:active {
+.headerNavs:active {
     color: var(--primaryLighter);
 }
 
@@ -193,11 +194,10 @@ body {
 
 }
 
-.img-container {
+#imgContainer {
     transition: all 0.1s ease-in-out;
-
     border-radius: 120px;
-    box-shadow: 0 0 25px 0 var(--primary);
+    box-shadow: 0 0 20px hsl(45,17%,19%);
     width: 350px;
     height: 350px;
     margin-left: 50px;
@@ -207,14 +207,14 @@ body {
     align-self: center;
 }
 
-.img-container:hover {
+#imgContainer:hover {
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 
-    box-shadow: 0 0 25px 0 var(--primaryDarkest);
+    box-shadow: 0 0 25px 0 black;
 }
 
-.img-container img {
+#imgContainer img {
     width: 100%;
     height: 100%;
     position: relative;
@@ -243,37 +243,44 @@ body {
     cursor: default;
 }
 
-#jseHighlighter {
-    color: black;
-}
+
 /* ! Landing page Down button*/
 #heroArrow {
     margin-top: 25px;
-    background-color: var(--background);
-    border: var(--background) 2px solid;
+    background-color: goldenrod;   
+    border: black 3px solid;
     box-shadow: 0 0 2px black;
-    color: var(--primary);
+    color: var(--darkModeDark);
     font-size: 1.2rem;
     padding: 10px 15px;
     cursor:pointer;
 
 }
 #heroArrow:hover {
-    background-color: goldenrod;
-    box-shadow: 0 0 2px rgb(255, 255, 255);
-    color: black;
+    background-color: hsl(45, 17%, 24%);
+    border: solid 3px black;
+    box-shadow: 0 0 2px black;
+    color: var(--primaryLighter);
+    opacity: 95%;
 }
 
 /* ! End of Button Section */
 /* ? end of hero */
 
 #heroPageDivider, #aboutPageDivider {
-    width: 100vw;
-    height: 8vh;
-    background-color: var(--background);
     display: none;
-    z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(45,17%,5%);   
+    box-shadow: 0 0 1px white;
 }
+#heroPageDivider div, #aboutPageDivider div {
+    width: 90vw;
+    height: 8vh;
+    background-color: hsl(45,17%,5%);   
+}
+
 /* ? About Me Section */
 #aboutToCenter {
     display: none;
@@ -281,28 +288,35 @@ body {
     justify-content: center;
     align-items: center;
 }
+#aboutMeOuterBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 91vh;
+    width: 90vw;
+    box-shadow: black 0 0 1px;
+}
 #aboutMeBox {
     display: none;
-    padding: 20px;
+    padding: 0 100px;
     font-size: 1.2rem;
     cursor: default;
-    height: 100vh;
-    width: 85vw;
-    
+
 }
 
 #aboutMe {
     text-align:center;
 }
 
-#aboutMeHeader {
+#aboutMeHeaderBox {
     grid-column: span 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--primaryLighter);
-
 }
+
 /* ! Tech Stack Section */
 
 #techStackHeaderBox {
@@ -311,17 +325,17 @@ body {
     box-sizing: border-box;
     padding: 10px;
 
-    color: var(--primary);
     background-color: goldenrod;
-    border: 2px solid var(--background);
-    width: 410px;
+    border-bottom: 1px solid black;
+
+
 }
 
 #techStackHeader {
-    color: var(--background);
     font-weight: bolder;
     font-size: 1.5rem;
     letter-spacing: 1px;
+    color: var(--darkModeDark);
 }
 
 #techStackBox {
@@ -333,8 +347,8 @@ body {
 
 }
 #techStack {
-    height: 410px;
-    width: 410px;
+    height: 320px;
+    width: 320px;
 }
 .codingLanguages {
     grid-column: span 2;
@@ -343,7 +357,6 @@ body {
 /* ! Tech Stack Icon Styling */
 .icon {
     gap: 5px;
-    color: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -352,10 +365,11 @@ body {
 
 
 
-.icon:hover, #light:hover, #dark:hover, #g-icon-holder:hover { 
+.icon:hover, #light:hover, #dark:hover { 
     transition: all 0.1s ease-in-out;
     transform: scale(1.15);
 }
+
 .fa-js {
     color: black;
 }
@@ -394,24 +408,25 @@ body {
 }
 /* ! Landing page Down button*/
 #aboutArrowBox {
-    bottom: 200px;
+
 }
 
 #aboutArrow {
-    position: absolute;
-    bottom: -750px;
+    align-self: flex-end;
+    justify-self: flex-start;
     background-color: goldenrod;
-    border: var(--background) 2px solid;
-    box-shadow: 0 0 2px rgb(255, 255, 255);
-    color: black;
+    border:black 3px solid;
+    box-shadow: 0 0 2px black;
+    color: var(--darkModeDark);
     font-size: 1.2rem;
     padding: 10px 15px;
     cursor:pointer;
 }
 #aboutArrow:hover {
-    background-color: var(--background);
-    color: var(--primary);
+    background-color: hsl(45, 17%, 24%);   
+    color: var(--primaryLighter);
     box-shadow: 0 0 2px black;
+    border: black solid 3px;
 }
 #aboutArrow:active, #contactButton:active, #heroArrow:active {
     transform: scale(0.90);
@@ -443,13 +458,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--background);
+    background-color: hsl(45,17%,5%);   
 }
 #footerBox {
     display: flex;
     justify-content: end;
     width: 90vw;
-    background-color: var(--background);
+    height: 8vh;
+    background-color: hsl(45,17%,5%);   
 }
 
 #socialmedia {

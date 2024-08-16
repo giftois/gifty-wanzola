@@ -1,26 +1,23 @@
+// ! Global Selectors 
+const body = document.querySelector('body');
+
 // ! Header Variables 
 const homeNav = document.getElementById('homeNav');
 const aboutNav = document.getElementById('aboutNav');
 const projectsNav = document.getElementById('projectsNav');
 const contactButton = document.getElementById('contactButton');
+const gIconHolder = document.getElementById('g-icon-holder');
+
 // ! Light x Dark Mode Variables
 const dark = document.getElementById("dark")
 const light = document.getElementById("light")
 
-const darkMode = () => {
-    dark.style.display = "none";
-    light.style.display = "block";
-}
-
-const lightMode = () => {
-    dark.style.display = "block";
-    light.style.display = "none";
-}
-
-dark.addEventListener("click", darkMode);
-light.addEventListener("click", lightMode);
-// ! End of Light x Dark Mode
 // ! Hero Section Variables
+// Image Section Variables
+const imgContainer = document.getElementById("imgContainer");
+
+// Hero Text Section Variables
+const header = document.getElementById("nameBarBox");
 const heroTop = document.getElementById("nameBarBoxDupe");
 const heroBox = document.getElementById("heroBox");
 const heroArrow = document.getElementById("heroArrow");
@@ -28,18 +25,112 @@ const heroPageDivider = document.getElementById("heroPageDivider");
 
 //! About Me Section Variable Declarations
 const aboutToCenter = document.getElementById("aboutToCenter");
+const aboutMeOuterBox = document.getElementById("aboutMeOuterBox");
 const aboutMeBox = document.getElementById("aboutMeBox");
 const aboutMe = document.getElementById("aboutMe");    
 const aboutArrowBox = document.getElementById("aboutArrowBox");
-const techStack = document.getElementById("techStack");
-const codingLanguages = document.getElementsByClassName("codingLanguages");
 const aboutPageDivider = document.getElementById("aboutPageDivider");
 
+//  Tech Stack Section Variable Declarations
+const techStack = document.getElementById("techStack");
+const techStackBox = document.getElementById("techStackBox");
+const codingLanguages = document.getElementsByClassName("codingLanguages");
+const pythonIcon = document.getElementById("pythonIcon");
+const jsIcon = document.getElementById("jsIcon");
 // ! Projects Section Variable Declarations 
 const projectsBox = document.getElementById("projectsBox");
-const projects = document.getElementsByClassName("projectsToCenter");
+const projectsToCenter = document.getElementsByClassName("projectsToCenter");
 
+//  ! Footer Section Variable Declarations
+const footerBox = document.getElementById("footerBox");
+const footerToCenter = document.getElementById("footerToCenter");
 
+// ! Event handling Functions
+
+// Dark Mode Toggle
+const darkMode = () => {
+    dark.style.display = "none";
+    light.style.display = "block";
+
+    body.style.cssText = `    
+    background-color: var(--darkModeDark);
+    color: var(--primaryLighter);
+    `
+    header.style.cssText = `
+    background-color: rgba(23,22,18,0.9);
+    box-shadow: 0 0 1px white;
+    `
+    heroBox.style.cssText = `
+    box-shadow: 0 0 1px white;
+    `
+    aboutMeOuterBox.style.cssText = `
+    box-shadow: 0 0 1px white;
+    `
+    techStackBox.style.cssText = `
+    box-shadow: 0 0 5px black;
+    background-color: hsl(45,17%,8%);
+    `
+    pythonIcon.style.cssText = `
+    color: gold;
+    `
+    jsIcon.style.cssText = `
+    color: gold;
+    `
+    projectsBox.style.cssText = `
+    box-shadow: 0 0 1px white;
+    `
+    footerBox.style.cssText = `
+    background-color: hsl(45,17%,5%);
+    `
+    footerToCenter.style.cssText = `
+    background-color: hsl(45,17%,5%);
+    box-shadow: 0 0 1px white;
+    `;
+
+}
+// Light Mode Toggle
+
+const lightMode = () => {
+    dark.style.display = "block";
+    light.style.display = "none";
+
+    body.style.cssText = `    
+    background-color: var(--primaryLighter);
+    color: var(--darkModeDark);
+    `
+    header.style.cssText = `
+    background-color: var(--primaryLighter);
+    box-shadow: 0 0 1px black;
+    `
+    heroBox.style.cssText = `
+    box-shadow: 0 0 1px black;
+    `
+    aboutMeOuterBox.style.cssText = `
+    box-shadow: 0 0 1px black;
+    `
+    techStackBox.style.cssText = `
+    box-shadow: 0 0 5px var(--darkModeDark);
+    background-color: var(--primaryLighter);
+    `
+    pythonIcon.style.cssText = `
+    color: black;
+    `
+    jsIcon.style.cssText = `
+    color: black;
+    `
+    projectsBox.style.cssText = `
+    box-shadow: 0 0 1px black;
+    `
+    footerBox.style.cssText = `
+    background-color: hsl(45,17%,5%);
+    `
+    footerToCenter.style.cssText = `
+    background-color: hsl(45,17%,5%);
+    box-shadow: 0 0 1px black;
+    `;
+
+}
+// Scroll to About
 const toAbout = () => {
 
     aboutToCenter.style.cssText = `
@@ -58,7 +149,7 @@ const toAbout = () => {
     display: block;
     `;
     heroPageDivider.style.cssText = `
-    display: block;
+    display: flex;
     `;
     techStack.style.cssText = `
     display: grid;
@@ -67,8 +158,9 @@ const toAbout = () => {
     footerBox.style.cssText = `
     display: none;
     `
-    aboutMeBox.scrollIntoView({ behavior: 'smooth' });
+    heroPageDivider.scrollIntoView({ behavior: 'smooth' });
 }
+// Scroll to Projects
 const toProjects = () => {
     
     projectsBox.style.cssText = `
@@ -78,7 +170,7 @@ const toProjects = () => {
     `;
 
     aboutPageDivider.style.cssText = `
-    display: block;
+    display: flex;
     `;
     footerBox.style.cssText = `
     display: flex;
@@ -86,18 +178,27 @@ const toProjects = () => {
     projectsBox.scrollIntoView({ behavior: 'smooth' });
 
 }
+// Scroll to Home
 const toHome = () => {
     heroTop.scrollIntoView({ behavior: 'smooth' });
 }
-const footerBox = document.getElementById("footerBox");
 
 // ! Event Listeners
+// Scroll to Home
 homeNav.addEventListener("click", toHome);
+gIconHolder.addEventListener("click", toHome);
+
+// Scroll to About
 aboutNav.addEventListener("click", toAbout);
 heroArrow.addEventListener("click", toAbout);
 
+// Scroll to Projects
 aboutArrowBox.addEventListener("click", toProjects);
 projectsNav.addEventListener("click", toProjects);
+
+// Scroll to Contact
 contactButton.addEventListener("click", toProjects);
 
-
+// Dark/Light 
+dark.addEventListener("click", darkMode);
+light.addEventListener("click", lightMode);

@@ -11,21 +11,21 @@
     <script defer src="script.js"></script>
 </head>
 
-<body>
+<body id="body">
     <div id="nameBarBoxDupe">
     </div>
-    <div class="nameBarBox">
+    <div id="nameBarBox">
         <div id="nameBar">
             <div id="g-icon-holder"><i id="g-icon" class="fa-solid fa-g"></i></div>           
-            <h3 id="name">Wanzola</h3>   
+            <h3 class="darkMode" id="name">Wanzola</h3>   
         </div>
 
         <nav id="topBar">
             <ul id="topBar-items">
-                <li id="homeNav" class="h-navs home-nav"><a class="h-navs-a-border">Home</a></li>
-                <li id="aboutNav" class="h-navs about-nav"><a class="h-navs-a-border" >About</a></li>
-                <li id="projectsNav" class="h-navs projects-nav"><a>Projects</a></li> 
-                <li><a id="contactButton">Contact Me</a></li>
+                <li id="homeNav" class="h-navs home-nav"><a class="headerNavs">Home</a></li>
+                <li id="aboutNav" class="h-navs about-nav"><a class="headerNavs" >About</a></li>
+                <li id="projectsNav" class="h-navs projects-nav"><a class="headerNavs">Projects</a></li> 
+                <li class="fa-beat" style="--fa-animation-iteration-count: 3; --fa-beat-scale: 1.05; animation-duration: 1s; "><a id="contactButton">Contact Me</a></li>
                 <li><i id="light" class="fa-solid fa-lightbulb "></i></li>
                 <li><i id="dark" class="fa-solid fa-moon "></i></li>
             </ul>
@@ -40,83 +40,81 @@
         <div id="heroToCenter"> 
             <section id="heroBox">
                 <div id="imgContainerBox">
-                    <div class="img-container">
+                    <div id="imgContainer">
                         <img src="Gifty-Headshot-necklace.jpg" alt="headshot">
                     </div>
                 </div>
 
                 <div id="heroTextBox">
                     <div id="heroHeader">
-                        <h1 id="heroName">Gifty Wanzola</h1>
+                        <h1 class="darkMode" id="heroName">Gifty Wanzola</h1>
                     </div>
 
                     <div id="heroPBox">
-                        <p class="heroText"> If you are in the market for a passionate and dedicated <span id="jseHighlighter">Junior Software Engineer</span> who can bring life to your ideas... <br><br> Click the button below.</p>
+                        <p class="heroText darkMode"> If you are in the market for a passionate and dedicated <span class="darkMode jseHighlighter">Junior Software Engineer</span> who can bring life to your ideas... <br><br> Click the button below.</p>
                     </div>
 
                     <ul>
-                        <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce"></i></li>
+                        <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                     </ul>
                 </div>
             </section>
         </div>
 
-        <div id="heroPageDivider">
-            
-        </div>
+        <div id="heroPageDivider" class="heroPageDivider"><div></div></div>
+
         <div id="aboutToCenter">
-            <article id="aboutMeBox"> 
+            <div id="aboutMeOuterBox">
+                <article id="aboutMeBox"> 
 
-                <div id="aboutMe">
-                    <div id="aboutMeHeader">
-                        <h2>About Me</h2>
-                    </div>
-                    <br>
-                    <div id="aboutMeContent">
-                        <p>After coding as a hobby for over a year and completing various JavaScript based projects and challenges, 
-                            I enrolled into a Software Skills bootcamp to fast track a career switch into the digital industry.
-                            <br><br>
-                            The bootcamp reinforced my knowledge in JS, HTML and CSS while providing a solid foundation for 
-                            database concepts. Take a look at my tech stack on the left to see which languages and frameworks I am currently familiar with.
-                        </p>
+                    <div id="aboutMe">
+                        <div id="aboutMeHeaderBox">
+                            <h2 class="darkMode" id="aboutMeHeader">About Me</h2>
+                        </div>
                         <br>
-                        <p>I am currently working towards another qualification within an apprentice role, as a Digital Service Technician. This course began in September 2024 and will be completed in the summer of 2026. 
-                            If you are interested, there is a breakdown of my qualifications and employment history via my CV linked here.
-                        </p>
+                        <div id="aboutMeContent">
+                            <p class="darkMode" >After coding as a hobby for over a year and completing various JavaScript based projects and challenges, 
+                                I enrolled into a Software Skills bootcamp to fast track a career switch into the digital industry.
+                                <br><br>
+                                The bootcamp reinforced my knowledge in JS, HTML and CSS while providing a solid foundation for 
+                                database concepts. Take a look at my tech stack on the left to see which languages and frameworks I am currently familiar with.
+                            </p>
+                            <br>
+                            <p class="darkMode">I am currently working towards another qualification within an apprentice role, as a Digital Service Technician. This course began in September 2024 and will be completed in the summer of 2026. 
+                                If you are interested, there is a breakdown of my qualifications and employment history via my CV linked here.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div id="techStackBox">
+                    <div id="techStackBox">
 
-                    <div id="techStackHeaderBox">
-                        <h2 id="techStackHeader">My Tech Stack</h2>
+                        <div id="techStackHeaderBox">
+                            <h2 class="darkMode" id="techStackHeader">My Tech Stack</h2>
+                        </div>
+        
+                        <ul id="techStack"> 
+                            <li class="icon"><i class="codingLanguages fa-brands fa-react"></i>React</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
+                            <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>MySQL</li>
+                        </ul>
                     </div>
-    
-                    <ul id="techStack"> 
-                        <li class="icon"><i class="codingLanguages fa-brands fa-react"></i>React</li>
-                        <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
-                        <li class="icon"><i class="codingLanguages fa-brands fa-js"></i>JavaScript</li>
-                        <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
-                        <li class="icon"><i class="codingLanguages fa-brands fa-python"></i>Python</li>
-                        <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
-                        <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
-                        <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>MySQL</li>
-                    </ul>
-                </div>
-               
-            </article>
+                
+                </article>
                 <ul id="aboutArrowBox">
-                    <li>
-                        <i id="aboutArrow" class="fa-solid fa-arrow-down"></i>
-                    </li>
+                    <li><i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 6s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                 </ul>
+            </div>
+
         </div>
-        <div id="aboutPageDivider">
-            
-        </div>
+        <div id="aboutPageDivider" class="aboutPageDivider"><div></div></div>
         <div id="projectsToCenter">
             <section id="projectsBox">
                 <div id="projectsHeaderBox">
-                    <h2>Projects</h2>
+                    <h2 class="darkMode" >Projects</h2>
                 </div>
 
                 <div id="projectGrid">
