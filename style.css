@@ -5,7 +5,8 @@
 --background: hsl(34, 44%, 7%);
 --primary: hsl(36, 43%, 72%);
 --primaryLighter: hsl(36, 43%, 82%);
---primaryDarker: hsl(36, 43%, 62%);
+--primaryLightest: hsl(36, 43%, 92%);
+--primaryDarker: hsl(36, 43%, 67%);
 --primaryDarkest: hsl(36, 43%, 28%);
 --secondary: hsl(66, 35%, 33%);
 --secondaryLighter: hsl(66, 35%, 38%);
@@ -56,13 +57,7 @@ body {
 }
 
 #nameBarBoxDupe {
-    display: none;
-    background-color: var(--primary);
-    width: 100%;
     top: 0;
-    height: 33px;
-    z-index: 0;
-    position:fixed;
 }
 
 #nameBar {
@@ -129,6 +124,7 @@ body {
     padding: 0px 20px;
     margin-right: 5px;
     box-shadow: 0 0 10px var(--primaryLighter);
+    cursor: pointer;
 }
 
 #contactButton {
@@ -154,12 +150,6 @@ body {
     color: var(--background);
 }
 
-#contactButton:active, #downArrow:active {
-    opacity: 50%;
-    transform: translateY(2px);
-
-}
-
 .h-navs a:hover {
     color: black;
     transform: translateY(-2px);
@@ -175,7 +165,6 @@ body {
 }
 
 
-
 /* Main */
 #heroToCenter {
     display: flex;
@@ -185,7 +174,7 @@ body {
 }
 /* ? Hero Section */
 /* ! Hero Section Left side (Image) */
-.hero-card {
+#heroBox {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
     gap: 5px;
@@ -208,7 +197,7 @@ body {
     transition: all 0.1s ease-in-out;
 
     border-radius: 120px;
-    box-shadow: 0 0 15px var(--primaryDarkest);
+    box-shadow: 0 0 25px 0 var(--primary);
     width: 350px;
     height: 350px;
     margin-left: 50px;
@@ -220,9 +209,9 @@ body {
 
 .img-container:hover {
     transition: all 0.1s ease-in-out;
-    width: 356px;
-    height: 356px;
-    box-shadow: 0 0 15px black;
+    transform: scale(1.05);
+
+    box-shadow: 0 0 25px 0 var(--primaryDarkest);
 }
 
 .img-container img {
@@ -253,6 +242,10 @@ body {
     padding: 10px;
     cursor: default;
 }
+
+#jseHighlighter {
+    color: black;
+}
 /* ! Landing page Down button*/
 #heroArrow {
     margin-top: 25px;
@@ -274,7 +267,7 @@ body {
 /* ! End of Button Section */
 /* ? end of hero */
 
-#pageDivider {
+#heroPageDivider, #aboutPageDivider {
     width: 100vw;
     height: 8vh;
     background-color: var(--background);
@@ -283,7 +276,7 @@ body {
 }
 /* ? About Me Section */
 #aboutToCenter {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -291,16 +284,14 @@ body {
 #aboutMeBox {
     display: none;
     padding: 20px;
-
     font-size: 1.2rem;
     cursor: default;
-    height: 92vh;
-    width: 80vw;
+    height: 100vh;
+    width: 85vw;
     
 }
 
 #aboutMe {
-    display: flex;
     text-align:center;
 }
 
@@ -363,18 +354,16 @@ body {
 
 .icon:hover, #light:hover, #dark:hover, #g-icon-holder:hover { 
     transition: all 0.1s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 .fa-js {
-    color: rgb(243, 184, 36);
-
+    color: black;
 }
-
 .fa-react {
     color: hsl(183, 57%, 49%);
 }
 .fa-python {
-    color: rgb(243, 184, 36);
+    color: black;
 
 }
 .fa-css3-alt {
@@ -397,13 +386,57 @@ body {
 }
 
 .fa-database {
-    color: hsl(183, 57%, 49%);
+    color: hsl(220, 89%, 65%);
 }
 
 .fa-code {
     font-size: 1.2rem;
 }
+/* ! Landing page Down button*/
+#aboutArrowBox {
+    bottom: 200px;
+}
+
+#aboutArrow {
+    position: absolute;
+    bottom: -750px;
+    background-color: goldenrod;
+    border: var(--background) 2px solid;
+    box-shadow: 0 0 2px rgb(255, 255, 255);
+    color: black;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    cursor:pointer;
+}
+#aboutArrow:hover {
+    background-color: var(--background);
+    color: var(--primary);
+    box-shadow: 0 0 2px black;
+}
+#aboutArrow:active, #contactButton:active, #heroArrow:active {
+    transform: scale(0.90);
+    opacity: 50%;
+}
+
+/* ! End of Button Section */
 /* ? End of About Section */
+
+/* ? Projects Section */
+#projectsToCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projectsBox {
+    display: none;
+    font-size: 1.2rem;
+    cursor: default;
+    width: 90vw;
+    height: 92vh;
+    box-shadow: 0 0 1px black;
+}
 
 #footerToCenter {
     display: flex;
