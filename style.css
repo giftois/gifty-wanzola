@@ -47,10 +47,20 @@ body {
     justify-content: space-between;
     z-index: 1000;
     align-items: center;
-    position: sticky;
-    top: 0;
+    position: fixed;
     width: 100%;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
+}
+#lightGlow {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: yellow;
+    box-shadow: yellow 0 0 20px;
+    right: 20px;
+    top:15px;
+    position: fixed;
+
 }
 
 #nameBar {
@@ -68,7 +78,8 @@ body {
     font-size: 1.1rem;
 }
 #g-icon-holder {
-    padding: 10px; margin: 0 10px;    
+    padding: 10px; margin-right: 15px;    
+    margin-left: 27px;
     border: solid black 3px;
     background-color: goldenrod;
     cursor: pointer;
@@ -90,63 +101,69 @@ body {
     text-transform:uppercase;
 }
 #dark {
-    font-size: 1.4rem;
+    font-size: 22px;
     padding: 0 30px;
     color: var(--background);
     cursor: pointer;
 }
 
 #light {
-    font-size: 1.4rem;
-    padding: 0 30px;
+    font-size: 22px;
+    padding: 0 27px;
     cursor: pointer;
     display: none;
     color: goldenrod;
-
 }
 
+#contactButton {
+    transition: all .1s ease-in-out;
+    border: black solid 3px;
+    background-color: goldenrod; 
+    color: black;
+    margin-left: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+#contactButton:hover {
+    background-color: hsl(43, 74%, 59%);
+    border: black solid 3px;
+    box-shadow: 0 0 1px black;
+
+
+}
 
 .headerNavs {
     padding: 0px 20px;
     margin-right: 5px;
     cursor: pointer;
-}
-
-#contactButton {
-    border: black solid 3px;
-
-    background-color: goldenrod; 
-    margin: 0 10px;
-    color: var(--darkModeDark);
-    font-size: 1rem;
-}
-#contactButton {
-    position: relative;
-    font-size: 1rem;
-    padding: 10px 15px;
-    text-decoration: none;
-    cursor: pointer;
-}
-#contactButton:hover {
-    background-color: hsl(45, 17%, 24%);
-    border: black solid 3px;
-    box-shadow: 0 0 1px black;
-    opacity: 90%;
     color: var(--primaryLighter);
 }
 
 .headerNavs:hover {
-    color: black;
-    transform: translateY(-2px);
+    color: white;
     padding: 0 19px;
-    border-left: solid 1px var(--background);
-    border-right: solid 1px var(--background);
-
-
+    border-left: solid 1px white;
+    border-right: solid 1px white;
 }
 
 .headerNavs:active {
+    opacity: 50%;
+}
+
+.projectsNav {
     color: var(--primaryLighter);
+    padding: 0 18px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.projectsNav:hover {
+    color: white;
+    padding: 0 17px;
+    border-left: solid 1px white;
+    border-right: solid 1px white;
+}
+.projectsNav:active {
+    opacity: 50%;
 }
 
 
@@ -166,13 +183,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 /* ? Hero Section */
 /* ! Hero Section Left side (Image) */
 #heroBox {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
-    height:92vh;
+    height: 92vh;
 
     align-content: center;
     /* display: none; */
@@ -201,6 +219,7 @@ body {
 }
 
 #imgContainer:hover {
+    border-radius: 125px;
     transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 
@@ -229,24 +248,6 @@ body {
     grid-column: 7 / span 6;
 
 }
-/* ! First order of business tomorrow */
-/*  #socialMediaHeroBox {
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    grid-column: 12 /span 1;
-    background-color: red;
-
-}
-
-#socialMediaHero {
-    position: relative;
-    gap: 50px;
-} 
-.socialIconsHero {
-    color: var(--darkModeDark);
-} */
 
 .heroText {
     font-size: 1.25rem;
@@ -261,6 +262,7 @@ body {
 
 /* ! Landing page Down button*/
 #heroArrow {
+    transition: all .2s ease-in-out;
     margin-top: 25px;
     background-color: goldenrod;   
     border: black 3px solid;
@@ -288,18 +290,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 #aboutMeBox {
-    display: none;
+    display: flex;
     padding: 0 100px;
     margin: 0;
     font-size: 1.2rem;
     cursor: default;
-    height: 92vh;
-
     align-items: center;
     justify-content: center;
+    height: 92vh;
 }
 
 #aboutMe {
@@ -327,8 +329,6 @@ body {
 
     background-color: goldenrod;
     border: 1px solid black;
-
-
 }
 
 #techStackHeader {
@@ -336,7 +336,13 @@ body {
     word-spacing: 2px;
     color: var(--darkModeDark);
 }
-
+#techStackxArrowBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
 #techStackBox {
     flex-direction: column;
     box-shadow: 0 0 5px var(--background);
@@ -345,6 +351,7 @@ body {
     /* display: none; */
 
 }
+
 #techStack {
     height: 320px;
     width: 320px;
@@ -362,11 +369,12 @@ body {
 
 }
 
-
-
-.icon:hover, #light:hover, #dark:hover { 
+.icon:hover, #dark:hover { 
     transition: all 0.1s ease-in-out;
     transform: scale(1.15);
+}
+.fa-gamepad {    
+    color: maroon;
 }
 
 .fa-js {
@@ -375,6 +383,7 @@ body {
 .fa-react {
     color: hsl(183, 57%, 49%);
 }
+
 .fa-python {
     color: black;
 
@@ -405,17 +414,22 @@ body {
 .fa-code {
     font-size: 1.2rem;
 }
+
+.fa-sass {
+    color: rgb(169, 107, 118);
+}
 /* ! Landing page Down button*/
 #aboutArrowBox {
-    margin: 30px 0;
+    align-self: end;
 }
 #aboutArrowBox li {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
-
 }
 
 #aboutArrow {
+    transition: all .2s ease-in-out;
+
     align-self: flex-end;
     justify-self: flex-start;
     background-color: goldenrod;
@@ -443,42 +457,48 @@ body {
 
 /* ? Projects Section */
 #projectsToCenter {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 92vh;
 }
 
 #projectsBox {
-    display: none;
+    display: grid;
     font-size: 1.2rem;
     cursor: default;
-    height: 92vh;
 
 }
-
+/* ? Footer styling */
 #footerToCenter {
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    background-color: hsl(45,17%,5%);   
+    background-color: hsl(45,17%,5%);  
+    box-shadow: 0 0 2px white; 
 }
 #footerBox {
-    position:relative;
-    display: none;
+    display: flex;
     justify-content: end;
     align-items: start;
     width: 90vw;
-    height: 92vh; 
-    background-color: hsl(45,17%,5%);   
+    height: 8.9vh; 
+    background-color: hsl(45,17%,5%);
 }
 
 #socialmedia {
     display: flex;
     align-items: space-around;
-    gap: 50px;
+    gap: 25px;
+}
 
+.fa-discord {
+    font-size: 1.8rem;
 }
 
 #socialmedia .fa-brands:hover {

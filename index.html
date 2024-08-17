@@ -13,23 +13,25 @@
 
 <body id="body">
     <div id="nameBarBoxDupe"></div>
+
     <div id="nameBarBox">
         <div id="nameBar">
             <div id="g-icon-holder"><i id="g-icon" class="fa-solid fa-g"></i></div>           
-            <h3 class="darkMode" id="name">Wanzola</h3>   
+            <h3 class="" id="name">Wanzola</h3>   
         </div>
-
         <nav id="topBar">
             <ul id="topBar-items">
                 <li id="homeNav" class="h-navs home-nav"><a class="headerNavs">Home</a></li>
                 <li id="aboutNav" class="h-navs about-nav"><a class="headerNavs" >About</a></li>
-                <li id="projectsNav" class="h-navs projects-nav"><a class="headerNavs">Projects</a></li> 
-                <li class="fa-beat" style="--fa-animation-iteration-count: 3; --fa-beat-scale: 1.05; animation-duration: 1s; "><a id="contactButton">Contact Me</a></li>
-                <li><i id="light" class="fa-solid fa-lightbulb "></i></li>
+                <li id="projectsNav" class="h-navs "><a class="projectsNav">Projects</a></li> 
+                <li class="fa-beat" style="--fa-animation-iteration-count: 2; --fa-beat-scale: 1.05; animation-duration: 0.5s; "><a id="contactButton">Contact Me</a></li>
+                <li><i id="light" class="fa-solid fa-sun fa-spin" style="--fa-animation-duration: 10s;"></i></li>
                 <li><i id="dark" class="fa-solid fa-moon "></i></li>
             </ul>
-        </nav>        
+        </nav>       
     </div>
+
+    <div class="fa-beat-fade" id="lightGlow" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.67"></div>
     
     <main id="mainSection">
         <div id="heroToCenter"> 
@@ -42,32 +44,21 @@
 
                 <div id="heroTextBox">
                     <div id="heroHeader">
-                        <h1 class="darkMode" id="heroName">Gifty Wanzola</h1>
+                        <h1 class="" id="heroName">Gifty Wanzola</h1>
                     </div>
 
                     <div id="heroPBox">
-                        <p class="heroText darkMode"> Are you looking for a <span class="highlightText">Junior Software Engineer</span> who can bring life to your ideas? <br><br> If you are — Click the Button below.</p>
+                        <p class="heroText "> Are you looking for a <span id="highlightText">Junior Software Engineer</span> who can bring life to your ideas? <br><br> If you are — Click the Button below.</p>
                     </div>
 
                     <ul>
                         <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                     </ul>
                 </div>
-                <!-- ! First order of business tomorrow -->
-                <!-- <div id="socialMediaHeroBox">
-                    <div id="socialmediaHero">
-                        <a href="https://www.instagram.com/giftois/"><i class="socialIconsHero fa-brands fa-instagram"></i></a>
-                        <a href="https://github.com/giftois"><i class="socialIconsHero fa-brands fa-github"></i></a>
-                        <a href=""><i class="socialIconsHero fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div> -->
-
             </section>
         </div>
 
-        <div id="heroPageDivider" class="heroPageDivider">
-            <div></div>
-        </div>
+        <div id="heroPageDivider" class="heroPageDivider"></div>
         <div id="heroPageDividerBottom" class="heroPageDividerBottom">
             <div></div>
         </div>
@@ -78,44 +69,45 @@
 
                     <div id="aboutMe">
                         <div id="aboutMeHeaderBox">
-                            <h2 class="darkMode" id="aboutMeHeader">About Me</h2>
+                            <h2 class="" id="aboutMeHeader">About Me</h2>
                         </div>
                         <br>
                         <div id="aboutMeContent">
-                            <p class="darkMode" >After coding as a hobby for over a year and completing various JavaScript based projects and challenges, 
-                                I enrolled into a Software Skills bootcamp to fast track a career switch into the digital industry.
+                            <p class="" >After coding as a hobby for over a year and completing various JavaScript-based projects and challenges 
+                                (via apps such as CodeWars), I enrolled into a 3-Month Software Skills bootcamp to fast track a career switch into the digital industry.
                                 <br><br>
-                                The bootcamp reinforced my knowledge in JS, HTML and CSS while providing a solid foundation for 
-                                database concepts. Take a look at my tech stack on the left to see which languages and frameworks I am currently familiar with.
+                                The bootcamp covered HMTL, CSS, JS, SQL and Python which has provided a solid foundation to progress with my learning. Take a look at my tech stack on the left to see which languages and frameworks I am currently familiar with.
                             </p>
                             <br>
-                            <p class="darkMode">I am currently working towards another qualification within an apprentice role, as a Digital Service Technician. This course began in September 2024 and will be completed in the summer of 2026. 
+                            <p class="">I am currently working towards another qualification within an apprentice role, as a Digital Service Technician. This course began in September 2024 and will be completed in the summer of 2026. 
                                 If you are interested, there is a breakdown of my qualifications and employment history via my CV linked here.
                             </p>
 
-                            <ul id="aboutArrowBox">
-                                <li>View Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 6s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
-                            </ul>
-
                         </div>
                     </div>
-                    <div id="techStackBox">
-
-                        <div id="techStackHeaderBox">
-                            <h2 class="darkMode" id="techStackHeader">My Tech Stack</h2>
+                    <div id="techStackxArrowBox">
+                        <div id="techStackBox">
+                            <div id="techStackHeaderBox">
+                                <h2 class="" id="techStackHeader">My Tech Stack</h2>
+                            </div>
+                            <ul id="techStack"> 
+                                <li class="icon"><i class="codingLanguages fa-brands fa-react fa-spin"></i>React</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-sass"></i>SCSS</li>
+                                <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
+                                <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>SQL</li>
+                                <li class="icon"><i class="codingLanguages fa-solid fa-gamepad"></i>Phaser.js</li>
+                            </ul>
                         </div>
-        
-                        <ul id="techStack"> 
-                            <li class="icon"><i class="codingLanguages fa-brands fa-react"></i>React</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
-                            <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>MySQL</li>
+                        <ul id="aboutArrowBox">
+                            <li>Click to view My Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 6s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                         </ul>
                     </div>
+                    
                 </article>
 
             </div>
@@ -123,19 +115,17 @@
         <div id="aboutPageDivider" class="aboutPageDivider">
             <div></div>
         </div>
+
         <div id="aboutPageDividerBottom" class="aboutPageDividerBottom">
             <div></div>
         </div>
 
         <div id="projectsToCenter">
+            <div id="projectsHeaderBox">
+                <h2 class="" >Projects</h2>
+            </div>
             <section id="projectsBox">
-                <div id="projectsHeaderBox">
-                    <h2 class="darkMode" >Projects</h2>
-                </div>
-
-                <div id="projectGrid">
-
-                </div>
+   
             </section>
         </div>
         
@@ -143,12 +133,20 @@
 
     <footer id="footerToCenter">
         <div id="footerBox">
-            <div id="socialmedia">
-                <a href="https://www.instagram.com/giftois/"><i class="social-icons fa-brands fa-instagram"></i></a>
-                <a href="https://github.com/giftois"><i class="social-icons fa-brands fa-github"></i></a>
-                <a href=""><i class="social-icons fa-brands fa-linkedin-in"></i></a>
-            </div>
+            <ul id="socialmedia">
+                <li><a href=""><i class="social-icons fa-brands fa-discord"></i></a></li>
+                <li><a href="https://www.instagram.com/giftois/"><i class="social-icons fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://github.com/giftois"><i class="social-icons fa-brands fa-github"></i></a></li>
+                <li><a href=""><i class="social-icons fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
         </div>
+        <!-- <div id="formBox">
+            <form action="">
+                <input type="text" id="nameInput" placeholder="Name">
+                <input type="email" id="emailInput" placeholder="Email">
+                <input type="submit" value="Submit">
+            </form>
+        </div> -->
     </footer>
 
 </body>
