@@ -86,7 +86,7 @@ const darkMode = () => {
     `
     footerToCenter.style.cssText = `
     background-color: hsl(45,17%,5%);
-    box-shadow: 0 0 1px white;
+    box-shadow: 0 0 2px white;
     `;
 
 }
@@ -123,7 +123,7 @@ const lightMode = () => {
     `
     footerToCenter.style.cssText = `
     background-color: hsl(45,17%,5%);
-    box-shadow: 0 0 1px black;
+    box-shadow: 0 0 2px black;
     `;
     
 }
