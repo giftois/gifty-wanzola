@@ -91,7 +91,6 @@ const darkMode = () => {
 
 }
 // Light Mode Toggle
-
 const lightMode = () => {
     dark.style.display = "block";
     light.style.display = "none";
@@ -125,7 +124,10 @@ const lightMode = () => {
     background-color: hsl(45,17%,5%);
     box-shadow: 0 0 2px black;
     `;
-    
+}
+// Scroll to Home
+const toHome = () => {
+    heroTop.scrollIntoView({ behavior: 'smooth' });
 }
 // Scroll to About
 const toAbout = () => {
@@ -156,7 +158,7 @@ const toAbout = () => {
     grid-template-columns: repeat(2, 1fr);
     `;
     footerBox.style.cssText = `
-    display: none;
+    display: flex;
     `
     heroPageDividerBottom.scrollIntoView({ behavior: 'smooth' });
 }
@@ -181,10 +183,16 @@ const toProjects = () => {
     projectsBox.scrollIntoView({ behavior: 'smooth' });
 
 }
-// Scroll to Home
-const toHome = () => {
-    heroTop.scrollIntoView({ behavior: 'smooth' });
+const toContact = () => {
+    heroBox.style.cssText = `
+    height: 84vh;
+    `
+    footerBox.style.cssText = `
+    display: flex;
+    `
+    footerBox.scrollIntoView({ behavior: 'smooth' });
 }
+
 
 // ! Event Listeners
 // Scroll to Home
@@ -200,7 +208,7 @@ aboutArrowBox.addEventListener("click", toProjects);
 projectsNav.addEventListener("click", toProjects);
 
 // Scroll to Contact
-contactButton.addEventListener("click", toProjects);
+contactButton.addEventListener("click", toContact);
 
 // Dark/Light 
 dark.addEventListener("click", darkMode);

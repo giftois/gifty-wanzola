@@ -453,7 +453,7 @@ body {
     display: none;
     font-size: 1.2rem;
     cursor: default;
-    height: 84vh;
+    height: 92vh;
 
 }
 
@@ -468,9 +468,9 @@ body {
     position:relative;
     display: none;
     justify-content: end;
-    align-items: center;
+    align-items: start;
     width: 90vw;
-    height: 8vh;
+    height: 92vh; 
     background-color: hsl(45,17%,5%);   
 }
 
@@ -489,4 +489,5 @@ body {
 }
 .social-icons {
     color: var(--primary);
+    margin: 20px 0;
 }
