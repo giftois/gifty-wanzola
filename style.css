@@ -254,10 +254,8 @@ body {
     font-size: 1.25rem;
     padding: 10px;
     cursor: default;
-    color: rgb(50, 4, 4)
 }
 .highlightText {
-    color: black;
     font-size: 1.3rem;
     text-decoration: underline;
 }
@@ -336,9 +334,8 @@ body {
 }
 
 #techStackHeader {
-    font-weight: bolder;
     font-size: 1.5rem;
-    letter-spacing: 1px;
+    word-spacing: 2px;
     color: var(--darkModeDark);
 }
 

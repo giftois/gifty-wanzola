@@ -21,6 +21,7 @@ const imgContainer = document.getElementById("imgContainer");
 const header = document.getElementById("nameBarBox");
 const heroTop = document.getElementById("nameBarBoxDupe");
 const heroBox = document.getElementById("heroBox");
+const highlightText = document.getElementById("highlightText");
 const heroArrow = document.getElementById("heroArrow");
 const heroPageDividerBottom = document.getElementById("heroPageDividerBottom");
 const heroPageDivider = document.getElementById("heroPageDivider");
@@ -68,6 +69,7 @@ const darkMode = () => {
     background-color: rgba(23,22,18,0.9);
     box-shadow: 0 0 2px white;
     `
+ 
     techStackBox.style.cssText = `
     box-shadow: 0 0 5px black;
     background-color: hsl(45,17%,8%);
@@ -78,8 +80,8 @@ const darkMode = () => {
     jsIcon.style.cssText = `
     color: gold;
     `
-
     footerBox.style.cssText = `
+    display: flex;
     background-color: hsl(45,17%,5%);
     `
     footerToCenter.style.cssText = `
@@ -116,13 +118,14 @@ const lightMode = () => {
     color: black;
     `
     footerBox.style.cssText = `
+    display: flex;
     background-color: hsl(45,17%,5%);
     `
     footerToCenter.style.cssText = `
     background-color: hsl(45,17%,5%);
     box-shadow: 0 0 1px black;
     `;
-
+    
 }
 // Scroll to About
 const toAbout = () => {
