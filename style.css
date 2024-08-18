@@ -136,34 +136,23 @@ body {
     padding: 0px 20px;
     margin-right: 5px;
     cursor: pointer;
-    color: var(--primaryLighter);
+    font-weight: bold;
 }
 
 .headerNavs:hover {
-    color: white;
     padding: 0 19px;
-    border-left: solid 1px white;
-    border-right: solid 1px white;
 }
 
 .headerNavs:active {
     opacity: 50%;
 }
 
-.projectsNav {
-    color: var(--primaryLighter);
+#projNav {
     padding: 0 18px;
-    margin-right: 5px;
-    cursor: pointer;
+    margin-right: 15px;
 }
-.projectsNav:hover {
-    color: white;
+#projNav:hover {
     padding: 0 17px;
-    border-left: solid 1px white;
-    border-right: solid 1px white;
-}
-.projectsNav:active {
-    opacity: 50%;
 }
 
 
@@ -206,9 +195,9 @@ body {
 }
 
 #imgContainer {
-    transition: all 0.1s ease-in-out;
+    transition: all 0.15s ease-in-out;
     border-radius: 120px;
-    box-shadow: 0 0 20px hsl(45,17%,19%);
+    box-shadow: 0 0 20px hsl(0, 0%, 0%);
     width: 350px;
     height: 350px;
     margin-left: 50px;
@@ -220,10 +209,9 @@ body {
 
 #imgContainer:hover {
     border-radius: 125px;
-    transition: all 0.1s ease-in-out;
     transform: scale(1.05);
 
-    box-shadow: 0 0 25px 0 black;
+    box-shadow: 0 0 35px 0 black;
 }
 
 #imgContainer img {
@@ -274,7 +262,7 @@ body {
 
 }
 #heroArrow:hover {
-    background-color: hsl(45, 17%, 24%);
+    background-color: hsl(45, 17%, 6%);
     border: solid 3px black;
     box-shadow: 0 0 2px black;
     color: var(--primaryLighter);
@@ -355,6 +343,8 @@ body {
 #techStack {
     height: 320px;
     width: 320px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 .codingLanguages {
     grid-column: span 2;
