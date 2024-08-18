@@ -261,7 +261,7 @@ body {
 
 }
 #heroArrow:hover {
-    background-color: hsl(45, 17%, 6%);
+    background-color: hsl(0, 0%, 19%);
     border: solid 3px black;
     box-shadow: 0 0 2px black;
     color: var(--primaryLighter);
@@ -431,7 +431,7 @@ body {
     margin-left: 20px;
 }
 #aboutArrow:hover {
-    background-color: hsl(45, 17%, 24%);   
+    background-color: hsl(0, 0%, 19%);
     color: var(--primaryLighter);
     box-shadow: 0 0 2px black;
     border: black solid 3px;
