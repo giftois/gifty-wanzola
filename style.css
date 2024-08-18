@@ -300,11 +300,15 @@ body {
 #aboutMeHeaderBox {
     text-align: center;
 }
+#aboutMeHeader {
+    color: rgb(97, 0, 0);
+}
 #aboutMeContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 
 }
 
