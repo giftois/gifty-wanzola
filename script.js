@@ -39,17 +39,24 @@ const projectsToCenter = document.getElementById("projectsToCenter");
 //  ! Footer Section Variable Declarations
 const footerBox = document.getElementById("footerBox");
 const footerToCenter = document.getElementById("footerToCenter");
+const socialIcons = document.getElementsByClassName("social-icons");
+const instagram = document.getElementById("instagram");
+const linkedin = document.getElementById("linkedin");
+const discord = document.getElementById("discord");
+const github = document.getElementById("github");
 
-// ! Event handling Functions
+// ! Global Variables
 //  Variable to track the current mode and alter hovrr effects
 let isDarkMode = true;
+let isExpanded = false;
 
+// ! Event handling Functions
 const headerOnHover = (event) => {
-    const hoverColor = isDarkMode ? 'white' : 'black';
+    const headerColor = isDarkMode ? 'white' : 'black';
     event.target.style.cssText = `
-    color: ${hoverColor};
-    border-left: solid 1px ${hoverColor};
-    border-right: solid 1px ${hoverColor};
+    color: ${headerColor};
+    border-left: solid 1px ${headerColor};
+    border-right: solid 1px ${headerColor};
     `;
 }
 
@@ -65,6 +72,26 @@ const headerOnLeave = (event) => {
 Array.from(headerNavs).forEach(nav => {
     nav.addEventListener("mouseenter", headerOnHover);
     nav.addEventListener("mouseleave", headerOnLeave);
+});
+
+const iconOnHover = (event) => {
+    const iconColor = isDarkMode ? 'white' : 'black';
+    event.target.style.cssText = `
+    color: ${iconColor};
+    `;
+}
+
+const iconOnLeave = (event) => {
+    const iconColor = isDarkMode ? 'var(--primary)' : 'var(--darkModeDark)';
+    event.target.style.cssText = `
+    color: ${iconColor};
+    `;
+}
+
+// Apply hover effect to each socialIcon element
+Array.from(socialIcons).forEach(icon => {
+    icon.addEventListener("mouseenter", iconOnHover);
+    icon.addEventListener("mouseleave", iconOnLeave);
 });
 
 // Dark Mode Toggle
@@ -110,11 +137,25 @@ const darkMode = () => {
     jsIcon.style.cssText = `
     color: gold;
     `;
+    footerToCenter.style.cssText = `
+    background-color: hsl(45, 17%, 5%);
+    box-shadow: 0 0 2px white;
+    `
+    discord.style.color = "var(--primaryLighter)";
+    github.style.color = "var(--primaryLighter)";
+    instagram.style.color = "var(--primaryLighter)";
+    linkedin.style.color = "var(--primaryLighter)";
+
 
     // Reapply hover effect after dark mode toggle
     Array.from(headerNavs).forEach(nav => {
         nav.addEventListener("mouseenter", headerOnHover);
         nav.addEventListener("mouseleave", headerOnLeave);
+    });
+
+    Array.from(socialIcons).forEach(icon => {
+        icon.addEventListener("mouseenter", iconOnHover);
+        icon.addEventListener("mouseleave", iconOnLeave);
     });
 }
 
@@ -153,11 +194,24 @@ const lightMode = () => {
     jsIcon.style.cssText = `
     color: black;
     `;
+    footerToCenter.style.cssText = `
+    background-color: hsl(36, 43%, 70%);
+    box-shadow: 0 0 2px black; 
+    `
+    discord.style.color = "var(--darkModeDark)";
+    github.style.color = "var(--darkModeDark)";
+    instagram.style.color = "var(--darkModeDark)";
+    linkedin.style.color = "var(--darkModeDark)";
 
-    // Reapply hover effect after light mode toggle
+    // Reapply hover effects after light mode toggle
     Array.from(headerNavs).forEach(nav => {
         nav.addEventListener("mouseenter", headerOnHover);
         nav.addEventListener("mouseleave", headerOnLeave);
+    });
+
+    Array.from(socialIcons).forEach(icon => {
+        icon.addEventListener("mouseenter", iconOnHover);
+        icon.addEventListener("mouseleave", iconOnLeave);
     });
 }
 
@@ -182,38 +236,30 @@ const toProjects = () => {
 
     projectsToCenter.scrollIntoView({ behavior: 'smooth' });
 
-    footerToCenter.style.cssText = `
-    height: 55vh;
-    position: static;
-    `;
+    window.addEventListener('scroll', checkFooterPosition);
 }
 
 // Scroll to Contact
 const toContact = () => {
-    footerBox.scrollIntoView({ behavior: 'smooth' });
-
-    footerToCenter.style.cssText = `
-    height: 55vh;
-    position: static;
-    `;
+    footerToCenter.scrollIntoView({ behavior: 'smooth' });
 }
+
 // Footer sizing functionality
 const checkFooterPosition = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
 
-    // Check if the user is at the bottom of the page
-    if (scrollTop + clientHeight >= scrollHeight - 5) {
+    // Check if the user is near the bottom of the page (within 5px)
+    if (scrollTop + clientHeight >= scrollHeight - 1) {
         if (!isExpanded) {
             footerToCenter.classList.add('expanded');
             isExpanded = true;
         }
-    } else {
-        if (isExpanded && scrollTop + clientHeight < scrollHeight - 5) {
-            footerToCenter.classList.remove('expanded');
-            isExpanded = false;
-        }
+    } else if (isExpanded) {
+        // If not at the bottom, shrink the footer back
+        footerToCenter.classList.remove('expanded');
+        isExpanded = false;
     }
 };
 // ! Event Listeners
@@ -237,7 +283,6 @@ dark.addEventListener("click", darkMode);
 light.addEventListener("click", lightMode);
 
 // Scroll position checker
-window.addEventListener('scroll', checkFooterPosition);
 
 
 // Initialize with dark mode

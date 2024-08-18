@@ -17,6 +17,7 @@
 }
 
 * {
+    transition: background-color 0.3s ease-in-out;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -288,7 +289,7 @@ body {
     cursor: default;
     align-items: center;
     justify-content: center;
-    height: 92vh;
+    height: 100vh;
 }
 
 #aboutMe {
@@ -459,6 +460,12 @@ body {
     cursor: default;
 
 }
+
+#footerSeparator {
+    height: 70px;
+    width: 10px;
+    background-color: red;
+}
 /* Footer styling */
 #footerToCenter {
     bottom: 0;
@@ -468,15 +475,15 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    background-color: hsl(45,17%,5%);  
+    background-color: hsl(45, 17%, 5%);
     box-shadow: 0 0 2px white; 
-    height: 8.9vh; /* Initial height */
-    transition: height 0.3s ease-in-out;
+    height: 8.9vh; 
+    transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
     z-index: 10;
 }
 
 #footerToCenter.expanded {
-    height: 30vh; /* Expanded height when the bottom is reached */
+    height: 500px; 
 }
 
 #footerBox {
@@ -484,30 +491,18 @@ body {
     justify-content: end;
     align-items: start;
     width: 90vw;
-    height: 100%; /* Adjust to fill the entire footer */
-    background-color: hsl(45,17%,5%);
+    height: 100%; 
 }
 
 #socialmedia {
     display: flex;
     gap: 25px;
-    /* Align the social media icons to the bottom */
-    /* margin-top: auto;  */
 }
 
 .fa-discord {
     font-size: 1.8rem;
 }
 
-#socialmedia .fa-brands:hover {
-    color: goldenrod;
-}
-
-#socialmedia .fa-brands:active {
-    color: gold;
-}
-
 .social-icons {
-    color: var(--primary);
     margin: 20px 0;
 }
