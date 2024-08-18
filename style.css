@@ -105,17 +105,18 @@ body {
 }
 #dark {
     font-size: 22px;
-    padding: 0 30px;
+    margin: 0 30px;
     color: var(--background);
     cursor: pointer;
+
 }
 
 #light {
     font-size: 22px;
-    padding: 0 27px;
+    padding: 0 27.1px;
     cursor: pointer;
     display: none;
-    color: goldenrod;
+    color: gold;
 }
 
 #contactButton {
@@ -242,9 +243,9 @@ body {
     padding: 10px;
     cursor: default;
 }
-.highlightText {
+#highlightText {
+    color: maroon;
     font-size: 1.3rem;
-    text-decoration: underline;
 }
 
 
@@ -333,11 +334,11 @@ body {
 }
 #techStackBox {
     flex-direction: column;
+    background-color: hsl(36, 43%, 78%);
     box-shadow: 0 0 5px var(--background);
     cursor: default;
     margin-left: 100px;
     /* display: none; */
-
 }
 
 #techStack {
@@ -451,20 +452,90 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 92vh;
+    height: 115vh;
 }
 
 #projectsBox {
     display: grid;
+    gap: 100px;
+    grid-template-columns: repeat(12, 1fr);
     font-size: 1.2rem;
     cursor: default;
+    padding: 0 100px;
+}
 
+#projectsHeaderBox {
+    margin-bottom: 100px;
+    justify-self: start;
+}
+/* ? Card icon styling */
+#diceIcon, #snakeIcon {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+#diceBox, #snakeBox {
+    background-color: hsl(36, 43%, 78%);
+    box-shadow: 0 0 5px var(--background);
+}
+#snakeButton, #diceButton {
+    transition: all 0.2s ease-in-out;
+    background-color: goldenrod;
+    border: black 3px solid;
+    box-shadow: 0 0 2px black;
+    color: var(--background);
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+#snakeButton:hover, #diceButton:hover {
+    background-color: hsl(43, 74%, 59%);
+    box-shadow: 0 0 2px black;
+    border: black solid 3px;
+}
+#snakeButton:active, #diceButton:active {
+    opacity: 50%;
+}
+
+.projectCardHeader {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--darkModeDark);
+    background-color: var(--primary);
+    padding: 10px 110px;
+    box-shadow: 0 0 1px black;
+}
+.projectCardHeaderBox {
+    text-align: center;
+}
+.projectCard {
+    padding: 25px;
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.projectCardButton a {
+    color: black;
+    text-decoration: none;
 }
 
 #footerSeparator {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    position: fixed;
+    margin: 0 auto;
+    height: 50vh;
+    width: 100vw;
+    transition: all 0.5s ease-in-out;
+}
+#footerDivider {
     height: 70px;
-    width: 10px;
-    background-color: red;
 }
 /* Footer styling */
 #footerToCenter {
@@ -475,15 +546,19 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    background-color: hsl(45, 17%, 5%);
-    box-shadow: 0 0 2px white; 
+    background-color: hsl(36, 43%, 70%);
+    box-shadow: 0 0 2px black; 
     height: 8.9vh; 
     transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
     z-index: 10;
 }
-
+#footerSeparator.expanded {
+    height: 15vh;
+    transition: height 2s ease-in-out;
+}
 #footerToCenter.expanded {
-    height: 500px; 
+    height: 50vh; 
+    transition: height 2s ease-in-out;
 }
 
 #footerBox {
@@ -505,4 +580,9 @@ body {
 
 .social-icons {
     margin: 20px 0;
+}
+#docBottom{
+    position: sticky;
+    bottom: 0;
+
 }

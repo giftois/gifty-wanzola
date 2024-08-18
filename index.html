@@ -25,7 +25,7 @@
                 <li id="aboutNav" class="h-navs about-nav"><a class="headerNavs" >About</a></li>
                 <li id="projectsNav" class="h-navs "><a id="projNav" class="headerNavs">Projects</a></li> 
                 <li class=""><a id="contactButton">Contact Me</a></li>
-                <li><i id="light" class="fa-solid fa-sun fa-spin" style="--fa-animation-duration: 10s;"></i></li>
+                <li><i id="light" class="fa-solid fa-sun fa-spin" style="--fa-animation-duration: 3s;"></i></li>
                 <li><i id="dark" class="fa-solid fa-moon "></i></li>
             </ul>
         </nav>       
@@ -57,12 +57,6 @@
                 </div>
             </section>
         </div>
-
-        <div id="heroPageDivider" class="heroPageDivider"></div>
-        <div id="heroPageDividerBottom" class="heroPageDividerBottom">
-            <div></div>
-        </div>
-
 
             <div id="aboutToCenter">
                 <article id="aboutMeBox"> 
@@ -112,24 +106,45 @@
 
             </div>
 
-        <div id="aboutPageDivider" class="aboutPageDivider">
-            <div></div>
-        </div>
-
-        <div id="aboutPageDividerBottom" class="aboutPageDividerBottom">
-            <div></div>
-        </div>
-
         <div id="projectsToCenter">
             <div id="projectsHeaderBox">
                 <h2 class="" >Projects</h2>
             </div>
             <section id="projectsBox">
-   
+                
+                <div id="diceBox" class="projectCard">
+                    <div class="projectCardHeaderBox" id="diceHeaderBox" >
+                        <i id="diceIcon" class="projectIcon fa-solid fa-dice-five fa-shake" style="--fa-animation-duration: 2s"></i>
+                        <h3 class="projectCardHeader" id="diceHeader">6-Sided Dice Roller</h3>
+                    </div>
+                    <br>
+                    <div id="diceContent">
+                        <p class="" >A simple Dice Roller web app built using HTML, CSS, and JavaScript. The app prompts the user to roll the dice, and it will return the result of the roll at random.</p>
+                        <br>
+                    </div>
+                    <div class="projectCardButton"><a href="https://giftois.github.io/6-Sided-Dice-Roller/" id="diceButton">View Live Project Here</a></div>
+
+                </div>
+
+                <div id="snakeBox" class="projectCard">
+                    <div class="projectCardHeaderBox" id="snakeHeaderBox">
+                        <i id="snakeIcon" class="projectIcon fa-solid fa-staff-snake fa-flip"></i>
+                        <h3 class="projectCardHeader" id="snakeHeader">Snakes & Ladders</h3>
+                    </div>
+                    <br>
+                    <div id="snakeContent">
+                        <p class="" >A simple Snakes & Ladders game built with HTML, CSS, and JavaScript. The game allows two players to input their names and roll a dice until one player reaches the goal.</p>
+                        <br>
+                    </div>
+                    <div class="projectCardButton"><a href="https://giftois.github.io/Snakes-and-Ladders/" id="snakeButton">View Live Project Here</a></div>
+                </div>
+
             </section>
         </div>
+        <div id="footerDivider"></div>
     </main>
-    <div id="footerSeparator"></div>
+    
+    <div id="footerSeparator">Get in Touch</div>
     <footer id="footerToCenter">
         <div id="footerBox">
             <ul id="socialmedia">
@@ -140,6 +155,6 @@
             </ul>
         </div>
     </footer>
-
+    <div id="docBottom"></div>
 </body>
 </html>

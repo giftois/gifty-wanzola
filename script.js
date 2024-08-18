@@ -35,10 +35,26 @@ const jsIcon = document.getElementById("jsIcon");
 
 // ! Projects Section Variable Declarations 
 const projectsToCenter = document.getElementById("projectsToCenter");
+const projectCard = document.getElementsByClassName("projectCard");
+
+const diceHeaderBox = document.getElementById("diceHeaderBox");
+const snakeHeaderBox = document.getElementById("snakeHeaderBox");
+
+const snakeBox = document.getElementById("snakeBox");
+const diceBox = document.getElementById("diceBox");
+
+const snakeIcon = document.getElementById("snakeIcon");
+const diceIcon = document.getElementById("diceIcon");
+
+const snakeHeader = document.getElementById("snakeHeader");
+const diceHeader = document.getElementById("diceHeader");
+
 
 //  ! Footer Section Variable Declarations
 const footerBox = document.getElementById("footerBox");
 const footerToCenter = document.getElementById("footerToCenter");
+const footerSeparator = document.getElementById("footerSeparator");
+const docBottom = document.getElementById("docBottom");
 const socialIcons = document.getElementsByClassName("social-icons");
 const instagram = document.getElementById("instagram");
 const linkedin = document.getElementById("linkedin");
@@ -47,7 +63,7 @@ const github = document.getElementById("github");
 
 // ! Global Variables
 //  Variable to track the current mode and alter hovrr effects
-let isDarkMode = true;
+let isDarkMode = false;
 let isExpanded = false;
 
 // ! Event handling Functions
@@ -75,7 +91,7 @@ Array.from(headerNavs).forEach(nav => {
 });
 
 const iconOnHover = (event) => {
-    const iconColor = isDarkMode ? 'white' : 'black';
+    const iconColor = isDarkMode ? 'goldenrod' : 'maroon';
     event.target.style.cssText = `
     color: ${iconColor};
     `;
@@ -121,11 +137,10 @@ const darkMode = () => {
     color: goldenrod;
     `;
     techStackHeaderBox.style.cssText = `
-    background-color: var(--darkModeDark);
     box-shadow: 0 0 2px white;
     `;
     techStackHeader.style.cssText = `
-    color: white;
+    color: black;
     `;
     techStackBox.style.cssText = `
     box-shadow: 0 0 2px white;
@@ -137,7 +152,36 @@ const darkMode = () => {
     jsIcon.style.cssText = `
     color: gold;
     `;
+    snakeBox.style.cssText = `
+    box-shadow: 0 0 2px white;
+    background-color: hsl(45,17%,5%);
+    `;
+    snakeIcon.style.cssText = `
+    color: goldenrod;
+    `
+    snakeHeader.style.cssText = `
+    background-color: rgba(23,22,18,0.9);
+    color: white;
+    box-shadow: 0 0 1px white;
+    `;
+    diceBox.style.cssText = `
+    box-shadow: 0 0 2px white;
+    background-color: hsl(45,17%,5%);
+    `;
+    diceIcon.style.cssText = `
+    color: goldenrod;
+    `;
+    diceHeader.style.cssText = `
+    background-color: rgba(23,22,18,0.9);
+    box-shadow: 0 0 1px white;
+    color: white;
+    `;
+
     footerToCenter.style.cssText = `
+    background-color: hsl(45, 17%, 5%);
+    box-shadow: 0 0 2px white;
+    `
+    footerSeparator.style.cssText = `
     background-color: hsl(45, 17%, 5%);
     box-shadow: 0 0 2px white;
     `
@@ -166,37 +210,66 @@ const lightMode = () => {
     light.style.display = "none";
 
     body.style.cssText = `
-    background-color: hsl(36, 43%, 81%);
-    color: var(--darkModeDark);
+    background-color: '';
+    color: '';
     `;
     main.style.cssText = `
-    box-shadow: 0 0 2px black;
+    box-shadow: '';
     background-color: var(--primaryLighter);
     `;
     header.style.cssText = `
-    background-color: var(--backgroundTP);
-    box-shadow: 0 0 2px black;
+    background-color: '';
+    box-shadow: '';
     `;
     lightGlow.style.display = 'none';
+
     highlightText.style.cssText = `
-    color: maroon;
+    color: '';
     `;
     aboutMeHeader.style.cssText = `
-    color: var(--background);
+    color: '';
     `;
     techStackBox.style.cssText = `
-    box-shadow: 0 0 5px var(--darkModeDark);
-    background-color: var(--primaryLighter);
+    box-shadow: '';
+    background-color: '';
     `;
     pythonIcon.style.cssText = `
-    color: black;
+    color: '';
     `;
     jsIcon.style.cssText = `
-    color: black;
+    color: '';
+    `;
+    snakeBox.style.cssText = `
+    box-shadow: '';
+    background-color: '';
+    `;
+    snakeIcon.style.cssText = `
+    color: '';
+    `;
+    snakeHeader.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    color: '';
+    `;
+    diceBox.style.cssText = `
+    box-shadow: '';
+    background-color: '';
+    `;
+    diceIcon.style.cssText = `
+    color: '';
+    `;
+    diceHeader.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    color: '';
     `;
     footerToCenter.style.cssText = `
-    background-color: hsl(36, 43%, 70%);
-    box-shadow: 0 0 2px black; 
+    background-color: '';
+    box-shadow: ''; 
+    `
+    footerSeparator.style.cssText = `
+    background-color: (var--primaryLighter);
+    box-shadow: '';
     `
     discord.style.color = "var(--darkModeDark)";
     github.style.color = "var(--darkModeDark)";
@@ -217,22 +290,30 @@ const lightMode = () => {
 
 // Scroll to Home
 const toHome = () => {
+    footerToCenter.classList.remove('expanded');
     heroTop.scrollIntoView({ behavior: 'smooth' });
 }
 
 // Scroll to About
 const toAbout = () => {
+    footerToCenter.classList.remove('expanded');
     aboutToCenter.style.cssText = `
     display: flex;
     `;
-    heroPageDividerBottom.scrollIntoView({ behavior: 'smooth' });
+    aboutToCenter.scrollIntoView({ behavior: 'smooth' });
 }
 
 // Scroll to Projects
 const toProjects = () => {
+
+    toAbout();
+
+    footerToCenter.classList.remove('expanded');
     projectsToCenter.style.cssText = `
     display: flex;
     `;
+
+    footerSeparator.style.display = "flex";
 
     projectsToCenter.scrollIntoView({ behavior: 'smooth' });
 
@@ -241,7 +322,18 @@ const toProjects = () => {
 
 // Scroll to Contact
 const toContact = () => {
-    footerToCenter.scrollIntoView({ behavior: 'smooth' });
+
+    aboutToCenter.style.cssText = `
+    display: flex;
+    `;    
+
+    projectsToCenter.style.cssText = `
+    display: flex;
+    `;
+    footerSeparator.style.display = "flex";
+    footerToCenter.classList.add('expanded');
+    docBottom.scrollIntoView({ behavior: 'smooth' });
+
 }
 
 // Footer sizing functionality
@@ -254,14 +346,20 @@ const checkFooterPosition = () => {
     if (scrollTop + clientHeight >= scrollHeight - 1) {
         if (!isExpanded) {
             footerToCenter.classList.add('expanded');
+            footerSeparator.style.cssText = `position: absolute;`;
+            footerSeparator.classList.add('expanded');
             isExpanded = true;
         }
     } else if (isExpanded) {
         // If not at the bottom, shrink the footer back
         footerToCenter.classList.remove('expanded');
+        footerSeparator.style.cssText = `position: absolute;`;
+        footerSeparator.classList.remove('expanded');
         isExpanded = false;
     }
 };
+
+
 // ! Event Listeners
 // Scroll to Home
 homeNav.addEventListener("click", toHome);
@@ -286,4 +384,4 @@ light.addEventListener("click", lightMode);
 
 
 // Initialize with dark mode
-darkMode();
+isDarkMode ? darkMode() : lightMode();
