@@ -8,7 +8,7 @@ const aboutNav = document.getElementById('aboutNav');
 const projectsNav = document.getElementById('projectsNav');
 const contactButton = document.getElementById('contactButton');
 const headerNavs = document.getElementsByClassName("headerNavs");
-const gIconHolder = document.getElementById('g-icon-holder');
+const gIcon = document.getElementById('g-icon');
 const lightGlow = document.getElementById('lightGlow');
 
 // ! Light x Dark Mode Variables
@@ -219,7 +219,7 @@ const checkFooterPosition = () => {
 // ! Event Listeners
 // Scroll to Home
 homeNav.addEventListener("click", toHome);
-gIconHolder.addEventListener("click", toHome);
+gIcon.addEventListener("click", toHome);
 
 // Scroll to About
 aboutNav.addEventListener("click", toAbout);

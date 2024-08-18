@@ -68,22 +68,24 @@ body {
     justify-content: center;
     align-items: center;
 }
-#g-icon-holder:hover { 
+#g-icon:hover { 
+    color: white;
+    background-color: hsl(0, 0%, 19%);
+    border: solid black 3px;
     transition: all 0.1s ease-in-out;
-    transform: scale(1.1);
 }
 
 #g-icon {
-    color: var(--background);
-    font-size: 1.1rem;
-}
-#g-icon-holder {
     padding: 10px; margin-right: 15px;    
     margin-left: 27px;
     border: solid black 3px;
     background-color: goldenrod;
     cursor: pointer;
+    font-size: 1.2rem;
+    color: black;
 }
+
+
 #name {
     display: flex;
     align-items: center;
@@ -143,9 +145,6 @@ body {
     padding: 0 19px;
 }
 
-.headerNavs:active {
-    opacity: 50%;
-}
 
 #projNav {
     padding: 0 18px;
@@ -437,7 +436,7 @@ body {
     box-shadow: 0 0 2px black;
     border: black solid 3px;
 }
-#aboutArrow:active, #contactButton:active, #heroArrow:active {
+#aboutArrow:active, #contactButton:active, #heroArrow:active, .headerNavs:active, #g-icon:active {
     transform: scale(0.90);
     opacity: 50%;
 }
