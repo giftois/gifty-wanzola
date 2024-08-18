@@ -1,3 +1,9 @@
+// ! Global Variables
+let isExpanded = false;
+
+//  Variable to track the current mode and alter hovrr effects
+let isDarkMode = true;
+
 // ! Global Selectors 
 const body = document.getElementById('body');
 const main = document.getElementById("mainSection");
@@ -61,10 +67,6 @@ const linkedin = document.getElementById("linkedin");
 const discord = document.getElementById("discord");
 const github = document.getElementById("github");
 
-// ! Global Variables
-//  Variable to track the current mode and alter hovrr effects
-let isDarkMode = false;
-let isExpanded = false;
 
 // ! Event handling Functions
 const headerOnHover = (event) => {
