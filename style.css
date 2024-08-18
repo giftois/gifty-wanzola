@@ -460,7 +460,7 @@ body {
     cursor: default;
 
 }
-/* ? Footer styling */
+/* Footer styling */
 #footerToCenter {
     bottom: 0;
     position: fixed;
@@ -471,20 +471,29 @@ body {
     align-items: center;
     background-color: hsl(45,17%,5%);  
     box-shadow: 0 0 2px white; 
+    height: 8.9vh; /* Initial height */
+    transition: height 0.3s ease-in-out;
+    z-index: 10;
 }
+
+#footerToCenter.expanded {
+    height: 30vh; /* Expanded height when the bottom is reached */
+}
+
 #footerBox {
     display: flex;
     justify-content: end;
     align-items: start;
     width: 90vw;
-    height: 8.9vh; 
+    height: 100%; /* Adjust to fill the entire footer */
     background-color: hsl(45,17%,5%);
 }
 
 #socialmedia {
     display: flex;
-    align-items: space-around;
     gap: 25px;
+    /* Align the social media icons to the bottom */
+    /* margin-top: auto;  */
 }
 
 .fa-discord {
@@ -494,9 +503,11 @@ body {
 #socialmedia .fa-brands:hover {
     color: goldenrod;
 }
+
 #socialmedia .fa-brands:active {
     color: gold;
 }
+
 .social-icons {
     color: var(--primary);
     margin: 20px 0;

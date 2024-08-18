@@ -41,10 +41,9 @@ const footerBox = document.getElementById("footerBox");
 const footerToCenter = document.getElementById("footerToCenter");
 
 // ! Event handling Functions
-// Variables to track the current mode
+//  Variable to track the current mode and alter hovrr effects
 let isDarkMode = true;
 
-// Hover effect for headrrs
 const headerOnHover = (event) => {
     const hoverColor = isDarkMode ? 'white' : 'black';
     event.target.style.cssText = `
@@ -198,7 +197,25 @@ const toContact = () => {
     position: static;
     `;
 }
+// Footer sizing functionality
+const checkFooterPosition = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
 
+    // Check if the user is at the bottom of the page
+    if (scrollTop + clientHeight >= scrollHeight - 5) {
+        if (!isExpanded) {
+            footerToCenter.classList.add('expanded');
+            isExpanded = true;
+        }
+    } else {
+        if (isExpanded && scrollTop + clientHeight < scrollHeight - 5) {
+            footerToCenter.classList.remove('expanded');
+            isExpanded = false;
+        }
+    }
+};
 // ! Event Listeners
 // Scroll to Home
 homeNav.addEventListener("click", toHome);
@@ -218,6 +235,10 @@ contactButton.addEventListener("click", toContact);
 // Dark/Light 
 dark.addEventListener("click", darkMode);
 light.addEventListener("click", lightMode);
+
+// Scroll position checker
+window.addEventListener('scroll', checkFooterPosition);
+
 
 // Initialize with dark mode
 darkMode();
