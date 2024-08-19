@@ -361,6 +361,35 @@ const checkFooterPosition = () => {
     }
 };
 
+// Switch dice icons
+const iconSwitcher = () => {
+    const diceIcon = document.getElementById('diceIcon');
+    const diceClasses = [
+        'fa-dice-one',
+        'fa-dice-two',
+        'fa-dice-three',
+        'fa-dice-four',
+        'fa-dice-five',
+        'fa-dice-six'
+    ];
+
+    const getRandomDiceClass = () => {
+        const randomIndex = Math.floor(Math.random() * diceClasses.length);
+        return diceClasses[randomIndex];
+    }
+
+    const changeDiceIcon = () => {
+        diceClasses.forEach(diceClass => diceIcon.classList.remove(diceClass));
+        const randomDiceClass = getRandomDiceClass();
+        diceIcon.classList.add(randomDiceClass);
+    }
+
+    // Change icon every time the shake animation ends
+    diceIcon.addEventListener('animationiteration', changeDiceIcon);
+
+};
+
+
 
 // ! Event Listeners
 // Scroll to Home
@@ -382,37 +411,8 @@ contactButton.addEventListener("click", toContact);
 dark.addEventListener("click", darkMode);
 light.addEventListener("click", lightMode);
 
+// Start dice animations
+document.addEventListener('DOMContentLoaded', iconSwitcher);
+
 // Initialize with dark mode
 isDarkMode ? darkMode() : lightMode();
-
-// TODO Got lazy insert chatCPT function here
-document.addEventListener('DOMContentLoaded', function () {
-    const diceIcon = document.getElementById('diceIcon');
-    const diceClasses = [
-        'fa-dice-one',
-        'fa-dice-two',
-        'fa-dice-three',
-        'fa-dice-four',
-        'fa-dice-five',
-        'fa-dice-six'
-    ];
-
-    const getRandomDiceClass = () => {
-        const randomIndex = Math.floor(Math.random() * diceClasses.length);
-        return diceClasses[randomIndex];
-    }
-
-    const changeDiceIcon = () => {
-
-        diceClasses.forEach(diceClass => diceIcon.classList.remove(diceClass));
-
-        const randomDiceClass = getRandomDiceClass();
-
-        diceIcon.classList.add(randomDiceClass);
-    }
-
-    // Change icon every time the shake animation ends
-    diceIcon.addEventListener('animationiteration', changeDiceIcon);
-});
-
-
