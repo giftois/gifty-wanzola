@@ -87,6 +87,8 @@ const linkedin = document.getElementById("linkedin");
 const discord = document.getElementById("discord");
 const github = document.getElementById("github");
 const footerHighlight = document.getElementById("footerHighlight");
+const footerText = document.getElementById("footerText");
+const copyright = document.getElementById("copyright");
 
 // ! Event handling Functions
 const headerOnHover = (event) => {
@@ -470,6 +472,8 @@ const checkFooterPosition = () => {
             footerToCenter.classList.add('expanded');
             footerSeparator.style.cssText = `position: absolute;`;
             footerSeparator.classList.add('expanded');
+            footerText.style.display = 'flex';
+            copyright.style.display = 'block';
             isExpanded = true;
         }
     } else if (isExpanded) {
@@ -477,6 +481,8 @@ const checkFooterPosition = () => {
         footerToCenter.classList.remove('expanded');
         footerSeparator.style.cssText = `position: absolute;`;
         footerSeparator.classList.remove('expanded');
+        footerText.style.display = 'none';
+        copyright.style.display = 'none';
         isExpanded = false;
     }
 };
