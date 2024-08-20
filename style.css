@@ -713,11 +713,12 @@ body {
     transition: height 2s ease-in-out;
 }
 #footerToCenter.expanded {
-    height: 15vh; 
+    height: 14.95vh; 
     transition: height 2s ease-in-out;
 }
-#footerToCenter h3 {
-    margin-bottom: 20px;
+#footerToCenter p {
+    margin-bottom: 30px;
+    margin-top: 5px;
 }
 
 #footerBox {
@@ -726,6 +727,10 @@ body {
     align-items: start;
     width: 90vw;
     height: 100%; 
+}
+#footerHighlight {
+    color: rgb(74, 0, 0);
+    font-weight: bolder;
 }
 
 #socialmedia {
@@ -745,6 +750,7 @@ body {
     bottom: 0;
 
 }
+
 
 
 /* TODO Got lazy: insert ChatGPT styling here */

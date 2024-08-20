@@ -78,7 +78,7 @@ const socialIcons = document.getElementsByClassName("social-icons");
 const linkedin = document.getElementById("linkedin");
 const discord = document.getElementById("discord");
 const github = document.getElementById("github");
-
+const footerHighlight = document.getElementById("footerHighlight");
 
 // ! Event handling Functions
 const headerOnHover = (event) => {
@@ -229,6 +229,9 @@ const darkMode = () => {
     github.style.color = "var(--primaryLighter)";
     linkedin.style.color = "var(--primaryLighter)";
 
+    footerHighlight.style.cssText = `
+    color: goldenrod;
+    `
 
     // Reapply hover effect after dark mode toggle
     Array.from(headerNavs).forEach(nav => {
@@ -301,7 +304,6 @@ const lightMode = () => {
     projectsHeader.style.cssText = `
     color: '';
     `
-
     snakeBox.style.cssText = `
     box-shadow: '';
     background-color: '';
@@ -338,6 +340,10 @@ const lightMode = () => {
     github.style.color = "var(--darkModeDark)";
     linkedin.style.color = "var(--darkModeDark)";
 
+
+    footerHighlight.style.cssText = `
+    color: '';
+    `
     // Reapply hover effects after light mode toggle
     Array.from(headerNavs).forEach(nav => {
         nav.addEventListener("mouseenter", headerOnHover);
