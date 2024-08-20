@@ -319,6 +319,23 @@ body {
 #popUpEmail, #popUpLocation {
     color: maroon;
 }
+#cvLink {
+    display: inline-block;
+    padding: 10px;
+    background-color: goldenrod;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+
+    transition: background-color 0.3s ease;
+}
+
+#cvLink:hover {
+    background-color: darkgoldenrod;
+}
+#cvLink:active {
+    opacity: 50%;
+}
 
 
 
@@ -372,6 +389,7 @@ body {
 /* ! Hero Right Side (text) */
 #heroName {
     cursor: default;
+    color: #333;
 }
 
 #heroTextBox {
@@ -426,25 +444,34 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 50px;
 }
 
 #aboutMeBox {
     display: flex;
-    padding: 0 100px;
+    width: 76.5vw;
     margin: 0;
     font-size: 1.2rem;
     cursor: default;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    gap: 50px;
 }
 
 #aboutMe {
-    text-align:left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #aboutMeHeaderBox {
     text-align: center;
+    width: 45vw; 
+
+    box-shadow: 0 0 1px black;
+    background-color: hsl(36, 43%, 78%);
+
 }
 #aboutMeHeader {
     color: rgb(97, 0, 0);
@@ -454,10 +481,51 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
+    text-align: justify;
 }
 
+/* ! Soft skills Section */
+
+#softSkillsHeaderBox {
+    text-align: center;
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    padding: 10px;
+
+    border: solid black 2px;
+    background-color:  rgb(97, 0, 0);
+}
+
+#softSkillsHeader {
+    font-size: 1.5rem;
+    word-spacing: 2px;
+    color: rgb(222, 222, 222);
+}
+#softSkillsxArrowBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#softSkillsBox {
+    flex-direction: row;
+    background-color: var(--backgroundTP);
+    box-shadow: 0 0 5px var(--background);
+    cursor: default;    
+}
+
+#softSkills {
+    height: 320px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#softSkills li {
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
 /* ! Tech Stack Section */
 
 #techStackHeaderBox {
@@ -466,39 +534,35 @@ body {
     box-sizing: border-box;
     padding: 10px;
 
-    background-color: goldenrod;
-    border: 1px solid black;
+    border: solid black 2px;
+    background-color:  rgb(97, 0, 0);
 }
 
 #techStackHeader {
     font-size: 1.5rem;
     word-spacing: 2px;
-    color: var(--darkModeDark);
+    color: rgb(222, 222, 222);
 }
-#techStackxArrowBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
+
 #techStackBox {
-    flex-direction: column;
-    background-color: hsl(36, 43%, 78%);
+    flex-direction: row;
+    background-color: var(--backgroundTP);
     box-shadow: 0 0 5px var(--background);
     cursor: default;
-    margin-left: 100px;
     /* display: none; */
 }
 
 #techStack {
-    height: 320px;
-    width: 320px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex; 
+    justify-content: space-around;
+    width: 76.5vw;
+    padding: 20px;
+
 }
+
+
 .codingLanguages {
-    grid-column: span 2;
+    grid-column: span 3;
 }
 
 /* ! Tech Stack Icon Styling */
@@ -561,14 +625,32 @@ body {
 }
 /* ! Landing page Down button*/
 #aboutArrowBox {
-    align-self: end;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-self: center;
+    margin-top: 20px;
+    width: 76.5vw;
+
+
 }
 #aboutArrowBox li {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    gap: 10px;
+    align-self: center;
 }
-
+#viewCVAboutText {
+    margin-right: 10px;
+}
 #aboutArrow {
+    padding: 10px 15px;
+    margin-left: 10px;
+}
+#aboutCV {
+    padding: 10px;
+    margin-right: 10px;
+}
+#aboutArrow, #aboutCV {
     transition: all .2s ease-in-out;
 
     align-self: flex-end;
@@ -578,17 +660,15 @@ body {
     box-shadow: 0 0 2px black;
     color: var(--darkModeDark);
     font-size: 1.2rem;
-    padding: 10px 15px;
     cursor:pointer;
-    margin-left: 20px;
 }
-#aboutArrow:hover {
+#aboutArrow:hover, #aboutCV:hover {
     background-color: rgba(20,19,27,0.95);
     color: var(--primaryLighter);
     box-shadow: 0 0 2px black;
     border: black solid 3px;
 }
-#aboutArrow:active, #contactButton:active, #heroArrow:active, .headerNavs:active, #g-icon:active {
+#aboutArrow:active, #contactButton:active, #heroArrow:active, .headerNavs:active, #g-icon:active, #popUpSubmit:active, #aboutCV:active {
     transform: scale(0.90);
     opacity: 50%;
 }
@@ -603,29 +683,39 @@ body {
     justify-content: center;
     align-items: center;
     height: 92vh;
+    gap: 50px;
+    width: 75vw;
+
 }
 
 #projectsBox {
     display: grid;
-    gap: 100px;
-    grid-template-columns: repeat(12, 1fr);
+    gap: 70px;
+    grid-template-columns: repeat(2, 1fr);
     font-size: 1.2rem;
     cursor: default;
-    padding: 0 100px;
+
+    justify-content: center;
+    align-items: center;
 }
 
 #projectsHeaderBox {
-    margin-bottom: 100px;
-    justify-self: start;
+    justify-self: center;
+    grid-column: span 2;
+    width: 75vw;
+    background-color: hsl(36, 43%, 78%);
+    box-shadow: 0 0 1px black;
+    text-align: center;
+    padding: 5px;
 }
 #projectsHeader {
-
     color: rgb(97, 0, 0);
 }
 /* ? Card icon styling */
 #diceIcon, #snakeIcon {
     margin-bottom: 20px;
     font-size: 2.5rem;
+    color: rgb(97, 0, 0);
 }
 #diceBox, #snakeBox {
     background-color: hsl(36, 43%, 78%);
@@ -654,7 +744,7 @@ body {
 
 .projectCardHeader {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+
     color: var(--darkModeDark);
     background-color: var(--primary);
     padding: 10px 110px;
@@ -662,14 +752,16 @@ body {
 }
 .projectCardHeaderBox {
     text-align: center;
+    padding: 0;
 }
 .projectCard {
-    padding: 25px;
-    grid-column: span 6;
+    padding: 20px 20px 30px 20px;
+    grid-column: span 1;
     display: flex;
     flex-direction: column;
-
-    text-align: center;
+    gap: 10px;
+    align-items: center;
+    text-align: justify;
 }
 
 .projectCardButton a {
@@ -729,7 +821,7 @@ body {
     height: 100%; 
 }
 #footerHighlight {
-    color: rgb(74, 0, 0);
+    color: rgb(97, 0, 0);
     font-weight: bolder;
 }
 

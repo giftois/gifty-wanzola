@@ -43,8 +43,15 @@ const heroPageDividerBottom = document.getElementById("heroPageDividerBottom");
 //! About Me Section Variable Declarations
 const aboutToCenter = document.getElementById("aboutToCenter");
 const aboutMeHeader = document.getElementById("aboutMeHeader");
+const aboutMeHeaderBox = document.getElementById("aboutMeHeaderBox");
 
-//  Tech Stack Section Variable Declarations
+
+// Soft Skills Section Variable Declarations
+const softSkillsHeaderBox = document.getElementById("softSkillsHeaderBox");
+const softSkillsBox = document.getElementById("softSkillsBox");
+const softSkillsHeader = document.getElementById("softSkillsHeader");
+
+// Tech Stack Section Variable Declarations
 const techStackHeaderBox = document.getElementById("techStackHeaderBox");
 const techStackBox = document.getElementById("techStackBox");
 const techStackHeader = document.getElementById("techStackHeader");
@@ -52,6 +59,7 @@ const pythonIcon = document.getElementById("pythonIcon");
 const jsIcon = document.getElementById("jsIcon");
 
 // ! Projects Section Variable Declarations 
+const projectsHeaderBox = document.getElementById("projectsHeaderBox");
 const projectsHeader = document.getElementById("projectsHeader");
 const projectsToCenter = document.getElementById("projectsToCenter");
 const projectCard = document.getElementsByClassName("projectCard");
@@ -112,7 +120,7 @@ const iconOnHover = (event) => {
 }
 
 const iconOnLeave = (event) => {
-    const iconColor = isDarkMode ? 'var(--primary)' : 'var(--darkModeDark)';
+    const iconColor = isDarkMode ? 'var(--backgroundTP)' : 'var(--darkModeDark)';
     event.target.style.cssText = `
     color: ${iconColor};
     `;
@@ -174,7 +182,24 @@ const darkMode = () => {
     aboutMeHeader.style.cssText = `
     color: var(--backgroundTP);
     `;
+    aboutMeHeaderBox.style.cssText = `
+    background-color: rgba(20,19,27,0.95);
+    box-shadow: 0 0 1px white;    
+    `;
+    
+    softSkillsHeaderBox.style.cssText = `
+    background-color: var(--backgroundTP);
+    box-shadow: 0 0 2px white;
+    `;
+    softSkillsHeader.style.cssText = `
+    color: black;
+    `;
+    softSkillsBox.style.cssText = `
+    box-shadow: 0 0 2px white;
+    background-color: rgba(20,19,27,0.95);
+    `;
     techStackHeaderBox.style.cssText = `
+    background-color: var(--backgroundTP);
     box-shadow: 0 0 2px white;
     `;
     techStackHeader.style.cssText = `
@@ -191,7 +216,10 @@ const darkMode = () => {
     color: gold;
     `;
     projectsHeader.style.cssText = `color: var(--backgroundTP);`
-
+    projectsHeaderBox.style.cssText = `
+    background-color: rgba(20,19,27,0.95);
+    box-shadow: 0 0 1px white;
+    `
     snakeBox.style.cssText = `
     box-shadow: 0 0 2px white;
     background-color: rgba(20,19,27,0.95);
@@ -291,6 +319,28 @@ const lightMode = () => {
     aboutMeHeader.style.cssText = `
     color: '';
     `;
+    aboutMeHeaderBox.style.cssText = `
+    background-color: '';
+    box-shadow: '';    
+    `;
+    softSkillsHeaderBox.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    `;
+    softSkillsHeader.style.cssText = `
+    color: '';
+    `;
+    softSkillsBox.style.cssText = `
+    box-shadow: '';
+    background-color: '';
+    `;
+    techStackHeaderBox.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    `;
+    techStackHeader.style.cssText = `
+    color: '';
+    `;
     techStackBox.style.cssText = `
     box-shadow: '';
     background-color: '';
@@ -303,6 +353,10 @@ const lightMode = () => {
     `;
     projectsHeader.style.cssText = `
     color: '';
+    `
+    projectsHeaderBox.style.cssText = `
+    background-color: '';
+    box-shadow: '';
     `
     snakeBox.style.cssText = `
     box-shadow: '';
@@ -402,18 +456,6 @@ const toContact = () => {
     display: initial;
     `
     backgroundOverlay.style.display = "block";
-
-    // aboutToCenter.style.cssText = `
-    // display: flex;
-    // `;    
-
-    // projectsToCenter.style.cssText = `
-    // display: flex;
-    // `;
-    // footerSeparator.style.display = "flex";
-    // footerToCenter.classList.add('expanded');
-    // docBottom.scrollIntoView({ behavior: 'smooth' });
-
 }
 
 // Footer sizing functionality
@@ -493,6 +535,35 @@ light.addEventListener("click", lightMode);
 
 // Start dice animations
 document.addEventListener('DOMContentLoaded', iconSwitcher);
+
+document.getElementById("contactFormBox").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    // Send the form data using fetch
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    }).then(response => {
+        if (response.ok) {
+            // Success message
+            document.getElementById("popUpFormTextHighlight").textContent = "Thank you! Your message has been sent successfully.";
+            document.getElementById('message').value = '';
+
+        } else {
+            // Error message
+            document.getElementById("popUpFormTextHighlight").textContent = "Oops! There was a problem submitting your form. Please try again. Or alternatively, email me directly by clicking the email link.";
+        }
+    }).catch(error => {
+        // Handle network errors
+        document.getElementById("popUpFormTextHighlight").textContent = "An error occurred while submitting the form. Please check your connection and try again.";
+    });
+});
 
 // Initialize with dark mode
 isDarkMode ? darkMode() : lightMode();

@@ -38,7 +38,7 @@
         <div id="contactPopUpToCenter">
             <i id="xIcon" class="fa-solid fa-xmark"></i>
 
-                <form id="contactFormBox">
+                <form id="contactFormBox" action="https://public.herotofu.com/v1/812a87d0-5ee3-11ef-b675-51969bcd4265" method="post" accept-charset="UTF-8">                    
                     <div id="contactFormHeaderBox">
                         <h3 id="contactFormHeader">Please fill out each field in the form below</h3>
                         <li id="popUpFormTextHighlight">Alternatively, you could email me directly.<br> Just click the highlighted email on the right.</li>
@@ -59,8 +59,9 @@
                             <label for="message">Message:</label>
                             <textarea class="inputField" id="message" name="message" required></textarea>                    
                         </div>
+                            
+                        <input id="popUpSubmit" type="submit" value="Submit"/>
 
-                        <input id="popUpSubmit" type="submit" value="Submit">
                     </div>
                 </form>
 
@@ -72,8 +73,10 @@
                     <ul id="popUpRightContentBox"> 
                         <li>Email:  <a id="popUpEmail" href="mailto:giftywanzola@outlook.com">giftywanzola@outlook.com</a></li>
                         <li>Location: Based in London</li>
+                        <br>
+                        <li><a href="Portfolio-CV.pdf" target="_blank" id="cvLink">View My CV</a></li>
                         <br><br>
-                        <li>Found a bug? <br><br>Feel free to also fill the message box with any positive or constructive feedback about my portfolio!</li>
+                        <li>Found a bug? <br><br>Feel free to also fill the message box with any constructive or positive feedback about my portfolio!</li>
                         <ul id="popUpIcons">
                             <li><a href="https://discord.com/channels/1042189479680688158/1042189480414695456"><i class="social-icons fa-brands fa-discord" id="popUpDiscord"></i></a></li>
                             <li><a href="https://github.com/giftois"><i class="social-icons fa-brands fa-github" id="popUpGithub"></i></a></li>
@@ -116,46 +119,61 @@
                     </div>
                     <br>
                     <div id="aboutMeContent">
-                        <p class="" >I began my journey into the digital industry by learning JavaScript as a hobby - where I completed various challenges
-                            via apps such as CodeWars. During summer 2024 I then enrolled onto a 3-Month Software Skills bootcamp with JustIT to fast track a career switch.
+                        <p class="" >After learning JavaScript as a hobby, and completing various challenges
+                            via apps such as CodeWars, I enrolled onto a 3-Month Software Skills bootcamp with JustIT to fast track a career switch.
                             <br><br>
-                            The bootcamp covered HMTL, CSS, JS, SQL and Python, which has provided a solid foundation to progress with my learning. Take a look at my tech stack on the right to see which languages and frameworks I am currently familiar with.
+                            The bootcamp covered HMTL, CSS, JS, SQL & Python — providing a solid foundation to progress with my learning. My tech stack on the right shows which languages and frameworks I am familiar with.
                         </p>
                         <br>
-                        <p class="">I am currently set to work towards another qualification, within an apprentice role, as a Digital Service Technician with University College London. This course will begin in September 2024 and will be completed in the summer of 2027. 
-                        </p>
+                        <p class="">I am currently set to work towards another qualification as an apprentice Digital Service Technician with University College London. This role will begin in September 2024 and will be completed in the summer of 2027.</p>
 
                     </div>
                 </div>
-                <div id="techStackxArrowBox">
-                    <div id="techStackBox">
-                        <div id="techStackHeaderBox">
-                            <h2 class="" id="techStackHeader">My Tech Stack</h2>
-                        </div>
-                        <ul id="techStack"> 
-                            <li class="icon"><i class="codingLanguages fa-brands fa-react fa-spin"></i>React</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
-                            <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
-                            <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>SQL</li>
-                        </ul>
+                <div id="softSkillsBox">
+                    <div id="softSkillsHeaderBox">
+                        <h2 class="" id="softSkillsHeader">Soft Skills</h2>
                     </div>
-                    <ul id="aboutArrowBox">
-                        <li>Click to view My Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                    <ul id="softSkills"> 
+                        <li class="icon">Communication</li>
+                        <li class="icon">Problem Solving</li>
+                        <li class="icon">Teamwork</li>
+                        <li class="icon">Ambition</li>
+                        <li class="icon">Motivation</li>
+                        <li class="icon"></i>Reliability</li>
+                        <li class="icon">Rapport Building</li>
+                        <li class="icon">Adaptability</li>
                     </ul>
                 </div>
             </article>
+            <div id="softSkillsxArrowBox">
+                <div id="techStackBox">
+                    <div id="techStackHeaderBox">
+                        <h2 class="" id="techStackHeader">My Tech Stack</h2>
+                    </div>
+                    <ul id="techStack"> 
+                        <li class="icon"><i class="codingLanguages fa-brands fa-react fa-spin"></i>React</li>
+                        <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
+                        <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
+                        <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
+                        <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
+                        <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
+                        <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
+                        <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>SQL</li>
+                    </ul>
+                </div>
+                <ul id="aboutArrowBox">
+                    <li>Next Page: Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                    <li id="viewCVAboutText"><a href="Portfolio-CV.pdf" target="_blank" id="cvLinkAbout"><i id="aboutCV" class="fa-solid fa-arrow-up-right-from-square"></i></a>View My CV</li>
+                </ul>
+            </div>
         </div>
 
         <div id="projectsToCenter">
             <div id="projectsHeaderBox">
                 <h2 id="projectsHeader">Projects</h2>
             </div>
+
             <section id="projectsBox">
-                
                 <div id="diceBox" class="projectCard">
                     <div class="projectCardHeaderBox" id="diceHeaderBox" >
                         <i id="diceIcon" class="projectIcon fa-solid fa-dice-five fa-shake" style="--fa-animation-duration: 2s"></i>
@@ -198,7 +216,7 @@
             </ul>
             
         </div>
-        <h3>To leave feedback or to reach out to me with any opportunities, click the <span id="footerHighlight">"Contact Me"</span>  button at the top of the page. </h3>
+        <h3>To leave feedback, or to reach out to me with any opportunities, click the <span id="footerHighlight">"Contact Me"</span>  button at the top of the page. </h3>
         <p>Copyright © 2024. All rights reserved.</p>
     </footer>
     <div id="docBottom"></div>
