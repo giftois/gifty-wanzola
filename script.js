@@ -33,6 +33,7 @@ const popUpDiscord = document.getElementById("popUpDiscord");
 const popUpGithub = document.getElementById("popUpGithub");
 const popUpLinkedin = document.getElementById("popUpLinkedin");
 // ! Hero Section Variables
+const heroName = document.getElementById("heroName");
 const header = document.getElementById("nameBarBox");
 const heroTop = document.getElementById("nameBarBoxDupe");
 const highlightText = document.getElementById("highlightText");
@@ -51,6 +52,7 @@ const pythonIcon = document.getElementById("pythonIcon");
 const jsIcon = document.getElementById("jsIcon");
 
 // ! Projects Section Variable Declarations 
+const projectsHeader = document.getElementById("projectsHeader");
 const projectsToCenter = document.getElementById("projectsToCenter");
 const projectCard = document.getElementsByClassName("projectCard");
 
@@ -80,7 +82,7 @@ const github = document.getElementById("github");
 
 // ! Event handling Functions
 const headerOnHover = (event) => {
-    const headerColor = isDarkMode ? 'white' : 'black';
+    const headerColor = isDarkMode ? 'goldenrod' : 'black';
     event.target.style.cssText = `
     color: ${headerColor};
     border-left: solid 1px ${headerColor};
@@ -136,12 +138,14 @@ const darkMode = () => {
     box-shadow: 0 0 2px white;
     background-color:  hsl(250,17%,5%);
     `;
+    
     header.style.cssText = `
     background-color: rgba(20,19,27,0.95);
     box-shadow: 0 0 2px white;
     `;
     lightGlow.style.display = 'block';
 
+    heroName.style.color = "var(--backgroundTP)";
     highlightText.style.cssText = `
     color: goldenrod;
     `;
@@ -168,7 +172,7 @@ const darkMode = () => {
     popUpLinkedin.style.color = "var(--primaryLighter)";
 
     aboutMeHeader.style.cssText = `
-    color: goldenrod;
+    color: var(--backgroundTP);
     `;
     techStackHeaderBox.style.cssText = `
     box-shadow: 0 0 2px white;
@@ -186,6 +190,8 @@ const darkMode = () => {
     jsIcon.style.cssText = `
     color: gold;
     `;
+    projectsHeader.style.cssText = `color: var(--backgroundTP);`
+
     snakeBox.style.cssText = `
     box-shadow: 0 0 2px white;
     background-color: rgba(20,19,27,0.95);
@@ -274,6 +280,8 @@ const lightMode = () => {
     popUpGithub.style.color = "var(--darkModeDark)";
     popUpLinkedin.style.color = "var(--darkModeDark)";
 
+    heroName.style.color = "";
+
     highlightText.style.cssText = `
     color: '';
     `;
@@ -290,6 +298,10 @@ const lightMode = () => {
     jsIcon.style.cssText = `
     color: '';
     `;
+    projectsHeader.style.cssText = `
+    color: '';
+    `
+
     snakeBox.style.cssText = `
     box-shadow: '';
     background-color: '';
