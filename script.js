@@ -1,5 +1,6 @@
 // ! Global Variables
 let isExpanded = false;
+let isOpen = false;
 
 //  Variable to track the current mode and alter hovrr effects
 let isDarkMode = true;
@@ -16,6 +17,15 @@ const contactButton = document.getElementById('contactButton');
 const headerNavs = document.getElementsByClassName("headerNavs");
 const gIcon = document.getElementById('g-icon');
 const lightGlow = document.getElementById('lightGlow');
+
+// Hamburger Variables
+const hamburgerBox = document.getElementById('hamburgerBox');
+const hamburger = document.getElementById('hamburger');
+
+const burgerHomeNav = document.getElementById('burgerHomeNav');
+const burgerAboutNav = document.getElementById('burgerAboutNav');
+const burgerProjectsNav = document.getElementById('burgerProjectsNav');
+const hamburgerIcon = document.getElementById('hamburgerIcon');
 
 // ! Light x Dark Mode Variables
 const dark = document.getElementById("dark");
@@ -150,9 +160,25 @@ const darkMode = () => {
     `;
     
     header.style.cssText = `
-    background-color: rgba(20,19,27,0.95);
+    background-color: rgba(20,19,27,0.90);
     box-shadow: 0 0 2px white;
     `;
+    hamburgerIcon.style.cssText = `
+    color: var(--backgroundTP);
+    `
+    hamburgerBox.style.cssText = `
+    background-color: rgba(20,19,27,0.95);
+    box-shadow: 0 0 2px white;
+    `
+    burgerAboutNav.style.cssText = `
+    color: white;
+    `
+    burgerProjectsNav.style.cssText = `
+    color: white;
+    `
+    burgerHomeNav.style.cssText = `
+    color: white;
+    `
     lightGlow.style.display = 'block';
 
     heroName.style.color = "var(--backgroundTP)";
@@ -293,6 +319,22 @@ const lightMode = () => {
     background-color: '';
     box-shadow: '';
     `;
+    hamburgerIcon.style.cssText = `
+    color: '';
+    `
+    hamburgerBox.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    `
+    burgerAboutNav.style.cssText = `
+    color: '';
+    `
+    burgerProjectsNav.style.cssText = `
+    color: '';
+    `
+    burgerHomeNav.style.cssText = `
+    color: '';
+    `
     lightGlow.style.display = 'none';
 
     backgroundOverlay.style.cssText = `
@@ -411,7 +453,16 @@ const lightMode = () => {
         icon.addEventListener("mouseleave", iconOnLeave);
     });
 }
-
+// Hamburger Menu
+const openBurger = () => {
+    if (isOpen) {
+       hamburgerBox.style.display = 'none' 
+       isOpen = false;
+    } else {
+       hamburgerBox.style.display = 'block'; 
+       isOpen
+    } 
+}
 // Pop up close button
 const closePopUp = () => {
     contactPopUpToCenter.style.cssText = `
@@ -520,17 +571,21 @@ const iconSwitcher = () => {
 // ! Event Listeners
 // Close pop up 
 xIcon.addEventListener("click", closePopUp);
+
 // Scroll to Home
 homeNav.addEventListener("click", toHome);
 gIcon.addEventListener("click", toHome);
+burgerHomeNav.addEventListener("click", toHome);
 
 // Scroll to About
 aboutNav.addEventListener("click", toAbout);
 heroArrow.addEventListener("click", toAbout);
+burgerAboutNav.addEventListener("click", toAbout);
 
 // Scroll to Projects
 aboutArrowBox.addEventListener("click", toProjects);
 projectsNav.addEventListener("click", toProjects);
+burgerProjectsNav.addEventListener("click", toProjects);
 
 // Scroll to Contact
 contactButton.addEventListener("click", toContact);
@@ -541,7 +596,6 @@ light.addEventListener("click", lightMode);
 
 // Start dice animations
 document.addEventListener('DOMContentLoaded', iconSwitcher);
-
 document.getElementById("contactFormBox").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -570,6 +624,8 @@ document.getElementById("contactFormBox").addEventListener("submit", function(ev
         document.getElementById("popUpFormTextHighlight").textContent = "An error occurred while submitting the form. Please check your connection and try again.";
     });
 });
+// Burger Icon
+hamburgerIcon.addEventListener("click", openBurger);
 
 // Initialize with dark mode
 isDarkMode ? darkMode() : lightMode();

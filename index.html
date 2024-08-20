@@ -16,7 +16,9 @@
 
     <div id="nameBarBox">
         <div id="nameBar">
-            <i id="g-icon" class="fa-solid fa-g"></i>          
+            <i id="g-icon" class="fa-solid fa-g"></i>
+            <i id="hamburgerIcon" class="fa-solid fa-bars"></i>
+         
             <h3 class="" id="name">Wanzola</h3>   
         </div>
         <nav id="topBar">
@@ -31,9 +33,19 @@
         </nav>       
     </div>
 
-    <div class="fa-beat-fade" id="lightGlow" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.67"></div>
+    <div id="lightGlowBox">
+        <i class="fa-beat-fade" id="lightGlow" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.67"></i>
+    </div>
+
     
     <main id="mainSection">
+        <div id="hamburgerBox">
+            <ul id="hamburger">
+                <li class=""><a id="burgerHomeNav" class="hamburgerNavs">Home</a></li>
+                <li class=""><a id="burgerAboutNav" class="hamburgerNavs" >About</a></li>
+                <li class=""><a id="burgerProjectsNav" class="hamburgerNavs">Projects</a></li> 
+            </ul>
+        </div>
         <div id="backgroundOverlay"></div>
         <div id="contactPopUpToCenter">
             <i id="xIcon" class="fa-solid fa-xmark"></i>
@@ -100,11 +112,11 @@
                     </div>
 
                     <div id="heroPBox">
-                        <p class="heroText "> Are you looking for a <span id="highlightText">Junior Software Engineer</span> who can bring life to your ideas? <br><br> If you are — Click the Button below.</p>
+                        <p class="heroText "> Are you looking for a <span id="highlightText">Junior Software Engineer</span> who can bring life to your ideas? <br><br><span class="responseRemove" >If you are — Click the Button below.</span> </p>
                     </div>
 
                     <ul>
-                        <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                        <li><i id="heroArrow" class="responseRemove fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                     </ul>
                 </div>
             </section>
@@ -134,14 +146,17 @@
                         <h2 class="" id="softSkillsHeader">Soft Skills</h2>
                     </div>
                     <ul id="softSkills"> 
-                        <li class="icon">Communication</li>
-                        <li class="icon">Problem Solving</li>
-                        <li class="icon">Teamwork</li>
-                        <li class="icon">Ambition</li>
-                        <li class="icon">Motivation</li>
-                        <li class="icon"></i>Reliability</li>
-                        <li class="icon">Rapport Building</li>
-                        <li class="icon">Adaptability</li>
+                        <li class="icon"></i>Reliable</li>
+                        <li class="icon">Communicator</li>
+
+                        <li class="icon">Motivated</li>
+                        <li class="icon">Teamworker</li>
+
+                        <li class="icon">Adaptable</li>
+                        <li class="icon">Rapport Builder</li>
+
+                        <li class="icon">Ambitious</li>
+                        <li class="icon">Problem Solver</li>
                     </ul>
                 </div>
             </article>
@@ -162,7 +177,7 @@
                     </ul>
                 </div>
                 <ul id="aboutArrowBox">
-                    <li>Next Page: Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                    <li>Next Page: Projects<i id="aboutArrow" class="responseRemove fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                     <li id="viewCVAboutText"><a href="Portfolio-CV.pdf" target="_blank" id="cvLinkAbout"><i id="aboutCV" class="fa-solid fa-arrow-up-right-from-square"></i></a>View My CV</li>
                 </ul>
             </div>
@@ -181,7 +196,7 @@
                     </div>
                     <br>
                     <div id="diceContent">
-                        <p class="" >The Dice Roller app prompts the user to roll the dice and it will return the result of the roll and alter background colours, at random.</p>
+                        <p class="" >A Dice Roller app that prompts the user to roll the dice and it will return the result of the roll, while altering background colours at random.</p>
                         <br>
                     </div>
                     <div class="projectCardButton"><a href="https://giftois.github.io/6-Sided-Dice-Roller/" id="diceButton">View Live Project Here</a></div>
@@ -195,7 +210,7 @@
                     </div>
                     <br>
                     <div id="snakeContent">
-                        <p class="" >A simple 6x6 Snakes & Ladders game that prompts two users to input their names and roll a dice until one player reaches the goal.</p>
+                        <p class="" >A simple 6x6 Snakes & Ladders game that prompts two users to input their names and roll a dice until one player reaches the final square.</p>
                         <br>
                     </div>
                     <div class="projectCardButton"><a href="https://giftois.github.io/Snakes-and-Ladders/" id="snakeButton">View Live Project Here</a></div>
@@ -206,13 +221,13 @@
         <div id="footerDivider"></div>
     </main>
     
-    <div id="footerSeparator">Thanks for coming</div>
+    <div class="responseRemove" id="footerSeparator">Thanks for coming</div>
     <footer id="footerToCenter">
         <div id="footerBox">
             <ul id="socialmedia">
-                <li><a href="https://discord.com/channels/1042189479680688158/1042189480414695456"><i class="social-icons fa-brands fa-discord" id="discord"></i></a></li>
-                <li><a href="https://github.com/giftois"><i class="social-icons fa-brands fa-github" id="github"></i></a></li>
-                <li><a href="https://uk.linkedin.com/in/gifty-wanzola-236586278?trk=people-guest_people_search-card&original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><i class="social-icons fa-brands fa-linkedin-in" id="linkedin"></i></a></li>
+                <li><a href="https://discord.com/channels/1042189479680688158/1042189480414695456"><i class="footerIcons social-icons fa-brands fa-discord" id="discord"></i></a></li>
+                <li><a href="https://github.com/giftois"><i class="footerIcons social-icons fa-brands fa-github" id="github"></i></a></li>
+                <li><a href="https://uk.linkedin.com/in/gifty-wanzola-236586278?trk=people-guest_people_search-card&original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><i class="footerIcons social-icons fa-brands fa-linkedin-in" id="linkedin"></i></a></li>
             </ul>
             <div id="footerText">
                 <h3>To leave feedback, or to reach out to me with any opportunities, click the <span id="footerHighlight">"Contact Me"</span>  button at the top of the page. </h3>
