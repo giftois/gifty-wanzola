@@ -24,10 +24,14 @@ const light = document.getElementById("light");
 const backgroundOverlay = document.getElementById("backgroundOverlay");
 const contactPopUpToCenter = document.getElementById("contactPopUpToCenter");
 const contactFormBox = document.getElementById("contactFormBox");
+const popUpFormTextHighlight = document.getElementById("popUpFormTextHighlight");
 const xIcon = document.getElementById("xIcon");
 const popUpEmail = document.getElementById("popUpEmail");
 const popUpRightBox = document.getElementById("popUpRightBox");
 
+const popUpDiscord = document.getElementById("popUpDiscord");
+const popUpGithub = document.getElementById("popUpGithub");
+const popUpLinkedin = document.getElementById("popUpLinkedin");
 // ! Hero Section Variables
 const header = document.getElementById("nameBarBox");
 const heroTop = document.getElementById("nameBarBoxDupe");
@@ -143,21 +147,25 @@ const darkMode = () => {
     `;
 
     contactPopUpToCenter.style.cssText = `
-    box-shadow: 0 0 3px white;
-    display: none;
+    box-shadow: 0 0 0 white;
     `
     backgroundOverlay.style.cssText = `
     background-color: rgba(0,0,0, 0.5);
-    display: none;
     `
     contactFormBox.style.cssText = `
     background-color: rgba(20, 19, 27, 0.8);
     box-shadow: 0 0 1px white;
     `;
+    popUpFormTextHighlight.style.color = "goldenrod";
+
     popUpRightBox.style.cssText = `
     background-color:  hsl(250,17%,15%);
     `
     popUpEmail.style.color = 'goldenrod';
+
+    popUpDiscord.style.color = "var(--primaryLighter)";
+    popUpGithub.style.color = "var(--primaryLighter)";
+    popUpLinkedin.style.color = "var(--primaryLighter)";
 
     aboutMeHeader.style.cssText = `
     color: goldenrod;
@@ -250,17 +258,22 @@ const lightMode = () => {
 
     backgroundOverlay.style.cssText = `
     background-color: "";
-    display: none;
     `
     contactFormBox.style.cssText = `
     background-color: '';    
     box-shadow: '';
     `;
+    popUpFormTextHighlight.style.color = "";
+
     popUpRightBox.style.cssText = `
     background-color: '';    
-    `
+    `;
     popUpEmail.style.color = '';
     
+    popUpDiscord.style.color = "var(--darkModeDark)";
+    popUpGithub.style.color = "var(--darkModeDark)";
+    popUpLinkedin.style.color = "var(--darkModeDark)";
+
     highlightText.style.cssText = `
     color: '';
     `;
@@ -465,3 +478,4 @@ document.addEventListener('DOMContentLoaded', iconSwitcher);
 
 // Initialize with dark mode
 isDarkMode ? darkMode() : lightMode();
+
