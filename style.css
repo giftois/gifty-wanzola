@@ -490,7 +490,7 @@ body {
     width: 45vw; 
 
     box-shadow: 0 0 1px black;
-    background-color: hsl(36, 43%, 78%);
+    background-color: var(--backgroundTP);
 
 }
 #aboutMeHeader {
