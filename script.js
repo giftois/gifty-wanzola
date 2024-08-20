@@ -20,6 +20,13 @@ const lightGlow = document.getElementById('lightGlow');
 // ! Light x Dark Mode Variables
 const dark = document.getElementById("dark");
 const light = document.getElementById("light");
+// ! Contact Pop up Variables 
+const backgroundOverlay = document.getElementById("backgroundOverlay");
+const contactPopUpToCenter = document.getElementById("contactPopUpToCenter");
+const contactFormBox = document.getElementById("contactFormBox");
+const xIcon = document.getElementById("xIcon");
+const popUpEmail = document.getElementById("popUpEmail");
+const popUpRightBox = document.getElementById("popUpRightBox");
 
 // ! Hero Section Variables
 const header = document.getElementById("nameBarBox");
@@ -62,7 +69,6 @@ const footerToCenter = document.getElementById("footerToCenter");
 const footerSeparator = document.getElementById("footerSeparator");
 const docBottom = document.getElementById("docBottom");
 const socialIcons = document.getElementsByClassName("social-icons");
-const instagram = document.getElementById("instagram");
 const linkedin = document.getElementById("linkedin");
 const discord = document.getElementById("discord");
 const github = document.getElementById("github");
@@ -119,15 +125,15 @@ const darkMode = () => {
     light.style.display = "block";
 
     body.style.cssText = `    
-    background-color:  hsl(45,17%,9%);
+    background-color:  hsl(250,17%,5%);
     color: white;
     `;
     main.style.cssText = `
     box-shadow: 0 0 2px white;
-    background-color: var(--darkModeDark);
+    background-color:  hsl(250,17%,5%);
     `;
     header.style.cssText = `
-    background-color: rgba(23,22,18,0.9);
+    background-color: rgba(20,19,27,0.95);
     box-shadow: 0 0 2px white;
     `;
     lightGlow.style.display = 'block';
@@ -135,6 +141,24 @@ const darkMode = () => {
     highlightText.style.cssText = `
     color: goldenrod;
     `;
+
+    contactPopUpToCenter.style.cssText = `
+    box-shadow: 0 0 3px white;
+    display: none;
+    `
+    backgroundOverlay.style.cssText = `
+    background-color: rgba(0,0,0, 0.5);
+    display: none;
+    `
+    contactFormBox.style.cssText = `
+    background-color: rgba(20, 19, 27, 0.8);
+    box-shadow: 0 0 1px white;
+    `;
+    popUpRightBox.style.cssText = `
+    background-color:  hsl(250,17%,15%);
+    `
+    popUpEmail.style.color = 'goldenrod';
+
     aboutMeHeader.style.cssText = `
     color: goldenrod;
     `;
@@ -146,7 +170,7 @@ const darkMode = () => {
     `;
     techStackBox.style.cssText = `
     box-shadow: 0 0 2px white;
-    background-color: hsl(45,17%,5%);
+    background-color: rgba(20,19,27,0.95);
     `;
     pythonIcon.style.cssText = `
     color: gold;
@@ -156,40 +180,39 @@ const darkMode = () => {
     `;
     snakeBox.style.cssText = `
     box-shadow: 0 0 2px white;
-    background-color: hsl(45,17%,5%);
+    background-color: rgba(20,19,27,0.95);
     `;
     snakeIcon.style.cssText = `
     color: goldenrod;
     `
     snakeHeader.style.cssText = `
-    background-color: rgba(23,22,18,0.9);
+    background-color:  hsl(250,17%,5%);
     color: white;
     box-shadow: 0 0 1px white;
     `;
     diceBox.style.cssText = `
     box-shadow: 0 0 2px white;
-    background-color: hsl(45,17%,5%);
+    background-color: rgba(20,19,27,0.95);
     `;
     diceIcon.style.cssText = `
     color: goldenrod;
     `;
     diceHeader.style.cssText = `
-    background-color: rgba(23,22,18,0.9);
+    background-color:  hsl(250,17%,5%);
     box-shadow: 0 0 1px white;
     color: white;
     `;
 
     footerToCenter.style.cssText = `
-    background-color: hsl(45, 17%, 5%);
+    background-color: hsl(250, 17%, 5%);
     box-shadow: 0 0 2px white;
     `
     footerSeparator.style.cssText = `
-    background-color: hsl(45, 17%, 5%);
+    background-color: hsl(250, 17%, 5%);
     box-shadow: 0 0 2px white;
     `
     discord.style.color = "var(--primaryLighter)";
     github.style.color = "var(--primaryLighter)";
-    instagram.style.color = "var(--primaryLighter)";
     linkedin.style.color = "var(--primaryLighter)";
 
 
@@ -225,6 +248,19 @@ const lightMode = () => {
     `;
     lightGlow.style.display = 'none';
 
+    backgroundOverlay.style.cssText = `
+    background-color: "";
+    display: none;
+    `
+    contactFormBox.style.cssText = `
+    background-color: '';    
+    box-shadow: '';
+    `;
+    popUpRightBox.style.cssText = `
+    background-color: '';    
+    `
+    popUpEmail.style.color = '';
+    
     highlightText.style.cssText = `
     color: '';
     `;
@@ -275,7 +311,6 @@ const lightMode = () => {
     `
     discord.style.color = "var(--darkModeDark)";
     github.style.color = "var(--darkModeDark)";
-    instagram.style.color = "var(--darkModeDark)";
     linkedin.style.color = "var(--darkModeDark)";
 
     // Reapply hover effects after light mode toggle
@@ -290,6 +325,13 @@ const lightMode = () => {
     });
 }
 
+// Pop up close button
+const closePopUp = () => {
+    contactPopUpToCenter.style.cssText = `
+    display: none;
+    `;
+    backgroundOverlay.style.display = 'none';
+}
 // Scroll to Home
 const toHome = () => {
     footerToCenter.classList.remove('expanded');
@@ -325,16 +367,21 @@ const toProjects = () => {
 // Scroll to Contact
 const toContact = () => {
 
-    aboutToCenter.style.cssText = `
-    display: flex;
-    `;    
+    contactPopUpToCenter.style.cssText = `
+    display: initial;
+    `
+    backgroundOverlay.style.display = "block";
 
-    projectsToCenter.style.cssText = `
-    display: flex;
-    `;
-    footerSeparator.style.display = "flex";
-    footerToCenter.classList.add('expanded');
-    docBottom.scrollIntoView({ behavior: 'smooth' });
+    // aboutToCenter.style.cssText = `
+    // display: flex;
+    // `;    
+
+    // projectsToCenter.style.cssText = `
+    // display: flex;
+    // `;
+    // footerSeparator.style.display = "flex";
+    // footerToCenter.classList.add('expanded');
+    // docBottom.scrollIntoView({ behavior: 'smooth' });
 
 }
 
@@ -392,6 +439,8 @@ const iconSwitcher = () => {
 
 
 // ! Event Listeners
+// Close pop up 
+xIcon.addEventListener("click", closePopUp);
 // Scroll to Home
 homeNav.addEventListener("click", toHome);
 gIcon.addEventListener("click", toHome);

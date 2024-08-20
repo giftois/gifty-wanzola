@@ -46,7 +46,7 @@ body {
     height: 8vh;
     display: flex;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 998;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -71,7 +71,7 @@ body {
 }
 #g-icon:hover { 
     color: white;
-    background-color: hsl(0, 0%, 19%);
+    background-color: rgba(20,19,27,0.95);
     border: solid black 3px;
     transition: all 0.1s ease-in-out;
 }
@@ -128,12 +128,8 @@ body {
     padding: 10px 15px;
     cursor: pointer;
 }
-#contactButton:hover {
+#contactButton:hover, #popUpSubmit:hover {
     background-color: hsl(43, 74%, 59%);
-    border: black solid 3px;
-    box-shadow: 0 0 1px black;
-
-
 }
 
 .headerNavs {
@@ -175,6 +171,141 @@ body {
     align-items: center;
 
 }
+/* ? Contact Pop Up Section */
+#backgroundOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for dimming */
+    backdrop-filter: blur(0px);
+    z-index: 999; /* Ensure it's behind the pop-up but above other content */
+}
+
+#contactPopUpToCenter {
+    display: none;
+    position: fixed;
+    top: 50%;  /* Centers the pop-up vertically */
+    left: 50%; /* Centers the pop-up horizontally */
+    transform: translate(-50%, -50%); /* Offsets the pop-up to perfectly center it */
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+    height: 72%;
+    width: 80%;
+    overflow: hidden;
+
+    box-shadow: 0 0 3px black;
+}
+#xIcon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+#contactFormBox {
+    position: absolute;
+    background-color: rgba(220, 202, 172, 0.7); /* Increased background opacity */
+    backdrop-filter: blur(15px);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 50%;
+    padding: 20px;
+}
+#contactFormHeaderBox {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+}
+#contactForm {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 70%;
+
+}
+
+#contactFormBox .inputField {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 3px black;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: black;
+
+}
+
+#contactPopUpHeaderBox {
+    align-self: center;
+}
+#popUpSubmit {
+    transition: all 0.3s ease-in-out;
+    border: solid black 2px;
+    background-color: goldenrod;
+    color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+
+}
+#popUpRightBox {
+    background-color: rgba(220, 202, 172);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+
+
+}
+#popUpRight {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+#popUpRightContentBox, #popUpRight {
+    font-size: 1.1rem;
+}
+#popUpRightHeader {
+    font-size: 3.5rem;
+}
+#popUpEmail, #popUpLocation {
+    color: maroon;
+}
+
+
+
 /* ? Hero Section */
 /* ! Hero Section Left side (Image) */
 #heroBox {
@@ -263,7 +394,7 @@ body {
 
 }
 #heroArrow:hover {
-    background-color: hsl(0, 0%, 19%);
+    background-color: rgba(20,19,27,0.95);
     border: solid 3px black;
     box-shadow: 0 0 2px black;
     color: var(--primaryLighter);
@@ -437,7 +568,7 @@ body {
     margin-left: 20px;
 }
 #aboutArrow:hover {
-    background-color: hsl(0, 0%, 19%);
+    background-color: rgba(20,19,27,0.95);
     color: var(--primaryLighter);
     box-shadow: 0 0 2px black;
     border: black solid 3px;

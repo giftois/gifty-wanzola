@@ -34,6 +34,49 @@
     <div class="fa-beat-fade" id="lightGlow" style="--fa-animation-duration: 2s; --fa-fade-opacity: 0.67"></div>
     
     <main id="mainSection">
+        <div id="backgroundOverlay"></div>
+        <div id="contactPopUpToCenter">
+            <i id="xIcon" class="fa-solid fa-xmark"></i>
+
+                <form id="contactFormBox">
+                    <div id="contactFormHeaderBox">
+                        <h3 id="contactFormHeader">Please fill out each field in the form below</h3>
+                    </div>
+                    <div id="contactForm">
+                        <div>
+                            <label for="name">Name:</label>
+                            <input class="inputField" type="text" id="name" name="name" required>
+                        </div>
+
+                        <div>
+                            <label for="email">Email:</label>
+                            <input class="inputField" type="email" id="email" name="email" required>                        
+                        </div>
+
+                        <div>
+                            <label for="message">Message:</label>
+                            <textarea class="inputField" id="message" name="message" required></textarea>                    
+                        </div>
+
+                        <input id="popUpSubmit" type="submit" value="Submit">
+                    </div>
+                </form>
+
+            <div id="popUpRightBox">
+                <article id="popUpRight">
+                    <div id="popUpRightHeaderBox">
+                        <h2 id="popUpRightHeader">Get in touch</h2>
+                    </div>
+                    <ul id="popUpRightContentBox"> 
+                        <li>Email:  <a id="popUpEmail" href="mailto:giftywanzola@outlook.com">giftywanzola@outlook.com</a></li>
+                        <li>Location: Based in London</li>
+                        <br>
+                        <li>Alternatively, you can email me directly. Just click the email above.</li>
+                        <li>Feel free to fill the message box with any positive or constructive feedback about my portfolio!</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
         <div id="heroToCenter"> 
             <section id="heroBox">
                 <div id="imgContainerBox">
@@ -52,56 +95,54 @@
                     </div>
 
                     <ul>
-                        <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                        <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                     </ul>
                 </div>
             </section>
         </div>
 
-            <div id="aboutToCenter">
-                <article id="aboutMeBox"> 
+        <div id="aboutToCenter">
+            <article id="aboutMeBox"> 
 
-                    <div id="aboutMe">
-                        <div id="aboutMeHeaderBox">
-                            <h2 class="" id="aboutMeHeader">About Me</h2>
-                        </div>
-                        <br>
-                        <div id="aboutMeContent">
-                            <p class="" >After coding as a hobby for over a year and completing various JavaScript-based projects and challenges 
-                                (via apps such as CodeWars), I enrolled into a 3-Month Software Skills bootcamp with JustIT to fast track a career switch into the digital industry.
-                                <br><br>
-                                The bootcamp covered HMTL, CSS, JS, SQL and Python which has provided a solid foundation to progress with my learning. Take a look at my tech stack on the right to see which languages and frameworks I am currently familiar with.
-                            </p>
-                            <br>
-                            <p class="">I am currently set to work towards another qualification, within an apprentice role, as a Digital Service Technician with University College London. This course will begin in September 2024 and will be completed in the summer of 2026. 
-                            </p>
-
-                        </div>
+                <div id="aboutMe">
+                    <div id="aboutMeHeaderBox">
+                        <h2 class="" id="aboutMeHeader">About Me</h2>
                     </div>
-                    <div id="techStackxArrowBox">
-                        <div id="techStackBox">
-                            <div id="techStackHeaderBox">
-                                <h2 class="" id="techStackHeader">My Tech Stack</h2>
-                            </div>
-                            <ul id="techStack"> 
-                                <li class="icon"><i class="codingLanguages fa-brands fa-react fa-spin"></i>React</li>
-                                <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
-                                <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
-                                <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
-                                <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
-                                <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
-                                <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
-                                <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>SQL</li>
-                            </ul>
+                    <br>
+                    <div id="aboutMeContent">
+                        <p class="" >I began my journey into the digital industry by learning JavaScript as a hobby - where I completed various challenges
+                            via apps such as CodeWars. During summer 2024 I then enrolled onto a 3-Month Software Skills bootcamp with JustIT to fast track a career switch.
+                            <br><br>
+                            The bootcamp covered HMTL, CSS, JS, SQL and Python, which has provided a solid foundation to progress with my learning. Take a look at my tech stack on the right to see which languages and frameworks I am currently familiar with.
+                        </p>
+                        <br>
+                        <p class="">I am currently set to work towards another qualification, within an apprentice role, as a Digital Service Technician with University College London. This course will begin in September 2024 and will be completed in the summer of 2027. 
+                        </p>
+
+                    </div>
+                </div>
+                <div id="techStackxArrowBox">
+                    <div id="techStackBox">
+                        <div id="techStackHeaderBox">
+                            <h2 class="" id="techStackHeader">My Tech Stack</h2>
                         </div>
-                        <ul id="aboutArrowBox">
-                            <li>Click to view My Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-iteration-count: 10; --fa-animation-delay: 6s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                        <ul id="techStack"> 
+                            <li class="icon"><i class="codingLanguages fa-brands fa-react fa-spin"></i>React</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-css3-alt"></i>CSS</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-js" id="jsIcon"></i>JavaScript</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-python" id="pythonIcon"></i>Python</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-html5"></i>HTML</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-node-js"></i>Node.js</li>
+                            <li class="icon"><i class="codingLanguages fa-brands fa-git-alt"></i>Git</li>
+                            <li class="icon"><i class="codingLanguages fa-solid fa-database"></i>SQL</li>
                         </ul>
                     </div>
-                    
-                </article>
-
-            </div>
+                    <ul id="aboutArrowBox">
+                        <li>Click to view My Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
 
         <div id="projectsToCenter">
             <div id="projectsHeaderBox">
@@ -146,7 +187,6 @@
         <div id="footerBox">
             <ul id="socialmedia">
                 <li><a href="https://discord.com/channels/1042189479680688158/1042189480414695456"><i class="social-icons fa-brands fa-discord" id="discord"></i></a></li>
-                <li><a href="https://www.instagram.com/giftois/"><i class="social-icons fa-brands fa-instagram" id="instagram"></i></a></li>
                 <li><a href="https://github.com/giftois"><i class="social-icons fa-brands fa-github" id="github"></i></a></li>
                 <li><a href="https://uk.linkedin.com/in/gifty-wanzola-236586278?trk=people-guest_people_search-card&original_referer=https%3A%2F%2Fwww.linkedin.com%2F"><i class="social-icons fa-brands fa-linkedin-in" id="linkedin"></i></a></li>
             </ul>
