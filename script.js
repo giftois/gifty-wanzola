@@ -182,7 +182,7 @@ const darkMode = () => {
     popUpLinkedin.style.color = "var(--primaryLighter)";
 
     aboutMeHeader.style.cssText = `
-    color: var(--backgroundTP);
+    color: white;
     `;
     aboutMeHeaderBox.style.cssText = `
     background-color: rgba(20,19,27,0.95);
@@ -217,7 +217,7 @@ const darkMode = () => {
     jsIcon.style.cssText = `
     color: gold;
     `;
-    projectsHeader.style.cssText = `color: var(--backgroundTP);`
+    projectsHeader.style.cssText = `color: white;`
     projectsHeaderBox.style.cssText = `
     background-color: rgba(20,19,27,0.95);
     box-shadow: 0 0 1px white;

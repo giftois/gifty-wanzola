@@ -474,7 +474,7 @@ body {
 
 }
 #aboutMeHeader {
-    color: rgb(97, 0, 0);
+    color: black;
 }
 #aboutMeContent {
     display: flex;
@@ -709,7 +709,7 @@ body {
     padding: 5px;
 }
 #projectsHeader {
-    color: rgb(97, 0, 0);
+    color: black;
 }
 /* ? Card icon styling */
 #diceIcon, #snakeIcon {
