@@ -19,7 +19,7 @@
             <i id="g-icon" class="fa-solid fa-g"></i>
             <i id="hamburgerIcon" class="fa-solid fa-bars"></i>
          
-            <h3 class="" id="name">Wanzola</h3>   
+            <h3 class="" id="headerName">Wanzola</h3>   
         </div>
         <nav id="topBar">
             <ul id="topBar-items">
@@ -50,32 +50,32 @@
         <div id="contactPopUpToCenter">
             <i id="xIcon" class="fa-solid fa-xmark"></i>
 
-                <form id="contactFormBox" action="https://public.herotofu.com/v1/812a87d0-5ee3-11ef-b675-51969bcd4265" method="post" accept-charset="UTF-8">                    
-                    <div id="contactFormHeaderBox">
-                        <h3 id="contactFormHeader">Please fill out each field in the form below</h3>
-                        <li id="popUpFormTextHighlight">Alternatively, you could email me directly.<br> Just click the highlighted email on the right.</li>
-
+            <form id="contactFormBox" action="https://public.herotofu.com/v1/812a87d0-5ee3-11ef-b675-51969bcd4265" method="post" accept-charset="UTF-8">                    
+                <div id="contactFormHeaderBox" class="responseRemove">
+                    <h3 id="contactFormHeader">Please fill out each field in the form below</h3>
+                    <li id="popUpFormTextHighlight">Alternatively, you could email me directly.<br> Just click the highlighted email on the right.</li>
+                </div>
+                <div id="contactForm">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input class="inputField" type="text" id="name" name="name" required>
                     </div>
-                    <div id="contactForm">
-                        <div>
-                            <label for="name">Name:</label>
-                            <input class="inputField" type="text" id="name" name="name" required>
-                        </div>
 
-                        <div>
-                            <label for="email">Email:</label>
-                            <input class="inputField" type="email" id="email" name="email" required>                        
-                        </div>
-
-                        <div>
-                            <label for="message">Message:</label>
-                            <textarea class="inputField" id="message" name="message" required></textarea>                    
-                        </div>
-                            
-                        <input id="popUpSubmit" type="submit" value="Submit"/>
-
+                    <div>
+                        <label for="email">Email:</label>
+                        <input class="inputField" type="email" id="email" name="email" required>                        
                     </div>
-                </form>
+
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea class="inputField" id="message" name="message" required></textarea>                    
+                    </div>
+                        
+                    <input id="popUpSubmit" type="submit" value="Submit"/>
+                    <li><a href="Portfolio-CV.pdf" target="_blank" class="leftCVButton">View My CV</a></li>
+
+                </div>
+            </form>
 
             <div id="popUpRightBox">
                 <article id="popUpRight">
@@ -86,9 +86,9 @@
                         <li>Email:  <a id="popUpEmail" href="mailto:giftywanzola@outlook.com">giftywanzola@outlook.com</a></li>
                         <li>Location: Based in London</li>
                         <br>
-                        <li><a href="Portfolio-CV.pdf" target="_blank" id="cvLink">View My CV</a></li>
+                        <li><a href="Portfolio-CV.pdf" target="_blank" class="cvLink">View My CV</a></li>
                         <br><br>
-                        <li>Found a bug? <br><br>Feel free to also fill the message box with any constructive or positive feedback about my portfolio!</li>
+                        <li class="responseRemove">Found a bug? <br><br>Feel free to also fill the message box with any constructive or positive feedback about my portfolio!</li>
                         <ul id="popUpIcons">
                             <li><a href="https://discord.com/channels/1042189479680688158/1042189480414695456"><i class="social-icons fa-brands fa-discord" id="popUpDiscord"></i></a></li>
                             <li><a href="https://github.com/giftois"><i class="social-icons fa-brands fa-github" id="popUpGithub"></i></a></li>
@@ -116,8 +116,7 @@
                     </div>
 
                     <ul>
-                        <li><i id="heroArrow" class="responseRemove fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
-                    </ul>
+                        <li><i id="heroArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>                    </ul>
                 </div>
             </section>
         </div>
@@ -177,7 +176,7 @@
                     </ul>
                 </div>
                 <ul id="aboutArrowBox">
-                    <li>Next Page: Projects<i id="aboutArrow" class="responseRemove fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 3s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
+                    <li class="responseRemove" >Next Page: Projects<i id="aboutArrow" class="fa-solid fa-arrow-down fa-bounce" style="--fa-animation-timing: ease-in-outs; --fa-animation-delay: 2s; ; --fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0; --fa-animation-duration: 2s;"></i></li>
                     <li id="viewCVAboutText"><a href="Portfolio-CV.pdf" target="_blank" id="cvLinkAbout"><i id="aboutCV" class="fa-solid fa-arrow-up-right-from-square"></i></a>View My CV</li>
                 </ul>
             </div>

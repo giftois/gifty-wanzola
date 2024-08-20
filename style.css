@@ -50,7 +50,7 @@ body {
     height: 8vh;
     display: flex;
     justify-content: space-between;
-    z-index: 996;
+    z-index: 994;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -99,7 +99,7 @@ body {
 }
 
 
-#name {
+#headerName {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,7 +171,7 @@ body {
 /* Main */
 
 #mainSection {
-    gap: 20vh;
+
     box-shadow: 0 0 2px black;
     margin: 0 auto;
     display: flex;
@@ -215,7 +215,7 @@ body {
     width: 80%;
     overflow: hidden;
 
-    box-shadow: 0 0 30px black;
+    box-shadow: 0 0 20px black;
 }
 #xIcon {
     font-size: 1.5rem;
@@ -227,14 +227,13 @@ body {
 }
 #popUpIcons {
     display: flex;
-
     gap: 20px;
     justify-content: center;
     padding: 10px 0;
 }
 #contactFormBox {
     position: absolute;
-    background-color: rgba(220, 202, 172, 0.8); /* Increased background opacity */
+    background-color: rgba(220, 202, 172, 0.8); 
     backdrop-filter: blur(15px);
     display: flex;
     gap: 20px;
@@ -287,7 +286,7 @@ body {
 #contactPopUpHeaderBox {
     align-self: center;
 }
-#popUpSubmit {
+#popUpSubmit, .leftCVButton {
     transition: all 0.3s ease-in-out;
     border: solid black 3px;
     background-color: goldenrod;
@@ -297,7 +296,9 @@ body {
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
-
+}
+.leftCVButton {
+    display: none;
 }
 #popUpRightBox {
     background-color: rgba(220, 202, 172);
@@ -333,21 +334,24 @@ body {
 #popUpEmail, #popUpLocation {
     color: maroon;
 }
-#cvLink {
+.cvLink {
     display: inline-block;
-    padding: 10px;
+    padding: 10px 15px;
+    border: black 2px solid;
     background-color: goldenrod;
     color: black;
     text-decoration: none;
     border-radius: 5px;
 
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
-#cvLink:hover {
-    background-color: darkgoldenrod;
+.cvLink:hover {
+    background-color: rgba(20,19,27,0.95);
+    color: white;
+    border: solid var(--backgroundTP) 2px;
 }
-#cvLink:active {
+.cvLink:active {
     opacity: 50%;
 }
 
@@ -403,7 +407,8 @@ body {
 /* ! Hero Right Side (text) */
 #heroName {
     cursor: default;
-    color: #333;
+    color:rgba(20,19,27,0.95);
+
 }
 
 #heroTextBox {
@@ -510,7 +515,7 @@ body {
     padding: 10px;
 
     border: solid black 2px;
-    background-color:  rgb(97, 0, 0);
+    background-color: rgba(20,19,27,0.95);
     width: 100%;
 }
 
@@ -559,7 +564,7 @@ body {
     padding: 10px;
 
     border: solid black 2px;
-    background-color:  rgb(97, 0, 0);
+    background-color: rgba(20,19,27,0.95);
 }
 
 #techStackHeader {
@@ -601,9 +606,6 @@ body {
 .icon:hover, #dark:hover { 
     transition: all 0.1s ease-in-out;
     transform: scale(1.15);
-}
-.fa-gamepad {    
-    color: maroon;
 }
 
 .fa-js {
@@ -770,9 +772,10 @@ body {
 .projectCardHeader {
     font-size: 1.5rem;
 
-    color: var(--darkModeDark);
-    background-color: var(--primary);
+    color: white;
+    background-color: rgba(20,19,27,0.95);
     padding: 10px 110px;
+    border: 2px solid black;
     box-shadow: 0 0 1px black;
 }
 .projectCardHeaderBox {
@@ -835,7 +838,6 @@ body {
     transition: height 2s ease-in-out;
 }
 
-
 #footerBox {
     display: flex;
     flex-direction: row-reverse;
@@ -878,9 +880,6 @@ body {
 
 }
 
-
-
-/* TODO Got lazy: insert ChatGPT styling here */
 .projectIcon {
     font-size: 48px;
     color: #333;
@@ -902,6 +901,8 @@ body {
     }
 }
 
+
+/* Media Queries for responsiveness ans accessibility */
 @media only screen and (max-width: 1242px) {
 
     #aboutMeBox {
@@ -921,14 +922,12 @@ body {
 
 
 }
-
 @media only screen and (max-width: 1153px) {
     .projectCard {
         grid-column: span 2;
         text-align: center;
     }
 }
-
 @media only screen and (max-width: 1118px) {
     #heroBox {
         display: flex;
@@ -963,9 +962,30 @@ body {
         grid-column: span 1;
         padding: 15px;
     }
-}
+    #contactFormHeaderBox {
+        display: none;
+    }
+    #popUpRightHeader {
+        font-size: 3rem;
+    }
 
-@media only screen and (max-width: 855px) {
+}
+@media only screen and (max-width: 968px) {
+    #popUpRightBox {
+        display: none;
+    }
+    #contactFormBox {
+        width: 100%;
+    }
+    .leftCVButton {
+        display: block;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 856px) {
+    #mainSection {
+        gap: 300px;
+    }
     #imgContainer {
         margin: 0;
         margin: 50px 0;
@@ -987,11 +1007,14 @@ body {
     #socialmedia {
         display: none;
     }
+    .projectCardHeader {
+        padding: 5px;
+    }
     #footerText h3 {
         font-size: 1rem;
         margin-bottom: 10px;
     }
-    #name {
+    #headerName {
         display: none;
     }
     .responseRemove {
@@ -999,10 +1022,27 @@ body {
     }
     #aboutToCenter, #projectsToCenter {
         display: flex;
+        height: 100vh;
+    }
+    #footerSeparator {
+        display: none; 
+    }
+    #footerToCenter {
+        position: static;
+    }
+    #copyright {
+        display: block;
+    }
+    #contactFormBox .inputField {
+        padding: 0;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    #contactForm {
+        margin: 0;
     }
 
 }
-
 @media only screen and (max-width: 648px) {
     .h-navs {
         display: none;
@@ -1050,12 +1090,11 @@ body {
     .hamburgerNavs:active {
         opacity: 50%;
     }
-}
 
+
+}
 @media only screen and (max-width: 679px) {
-    #mainSection {
-        gap: 20vh;
-    }
+
     #aboutArrowBox {
         flex-direction: column-reverse;
         gap: 10px;
@@ -1076,7 +1115,14 @@ body {
     }
 
 }
-
 @media only screen and (max-width: 517px) {
-
+    h1 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    #aboutMeContent p {
+        font-size: 1.1rem;
+    }
 }

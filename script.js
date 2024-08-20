@@ -101,6 +101,7 @@ const footerText = document.getElementById("footerText");
 const copyright = document.getElementById("copyright");
 
 // ! Event handling Functions
+
 const headerOnHover = (event) => {
     const headerColor = isDarkMode ? 'goldenrod' : 'black';
     event.target.style.cssText = `
@@ -146,6 +147,7 @@ Array.from(socialIcons).forEach(icon => {
 
 // Dark Mode Toggle
 const darkMode = () => {
+
     isDarkMode = true;
     dark.style.display = "none";
     light.style.display = "block";
@@ -194,7 +196,6 @@ const darkMode = () => {
     `
     contactFormBox.style.cssText = `
     background-color: rgba(20, 19, 27, 0.8);
-    box-shadow: 0 0 1px white;
     `;
     popUpFormTextHighlight.style.color = "goldenrod";
 
@@ -256,8 +257,9 @@ const darkMode = () => {
     color: goldenrod;
     `
     snakeHeader.style.cssText = `
-    background-color:  hsl(250,17%,5%);
-    color: white;
+    background-color: var(--backgroundTP);
+    border: 1px solid black;
+    color: black;
     box-shadow: 0 0 1px white;
     `;
     diceBox.style.cssText = `
@@ -268,9 +270,10 @@ const darkMode = () => {
     color: goldenrod;
     `;
     diceHeader.style.cssText = `
-    background-color:  hsl(250,17%,5%);
+    background-color: var(--backgroundTP);
     box-shadow: 0 0 1px white;
-    color: white;
+    border: 1px solid black;
+    color: black;
     `;
 
     footerToCenter.style.cssText = `
@@ -313,7 +316,7 @@ const lightMode = () => {
     `;
     main.style.cssText = `
     box-shadow: '';
-    background-color: var(--primaryLighter);
+    background-color: 'var(--primaryLighter)';
     `;
     header.style.cssText = `
     background-color: '';
@@ -338,7 +341,10 @@ const lightMode = () => {
     lightGlow.style.display = 'none';
 
     backgroundOverlay.style.cssText = `
-    background-color: "";
+    background-color: '';
+    `
+    contactPopUpToCenter.style.cssText = `
+    box-shadow: '';
     `
     contactFormBox.style.cssText = `
     background-color: '';    
@@ -413,6 +419,7 @@ const lightMode = () => {
     background-color: '';
     box-shadow: '';
     color: '';
+    border: '';    
     `;
     diceBox.style.cssText = `
     box-shadow: '';
@@ -425,6 +432,7 @@ const lightMode = () => {
     background-color: '';
     box-shadow: '';
     color: '';
+    border: '';    
     `;
     footerToCenter.style.cssText = `
     background-color: '';
@@ -460,7 +468,7 @@ const openBurger = () => {
        isOpen = false;
     } else {
        hamburgerBox.style.display = 'block'; 
-       isOpen
+       isOpen = true;
     } 
 }
 // Pop up close button
