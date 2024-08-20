@@ -1113,7 +1113,9 @@ body {
     .codingLanguages {
         grid-column: span 1;
     }
-
+    #footerText {
+        display: none;
+    }
 }
 @media only screen and (max-width: 517px) {
     h1 {
