@@ -831,7 +831,7 @@ body {
     background-color: hsl(36, 43%, 70%);
     box-shadow: 0 0 2px black; 
     height: 8.9vh; 
-    transition: height 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     z-index: 10;
 }
 #footerSeparator.expanded {
@@ -840,7 +840,7 @@ body {
 }
 #footerToCenter.expanded {
     height: 14.95vh; 
-    transition: height 3s ease-in-out;
+    transition: height 3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 #footerBox {
