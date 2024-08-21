@@ -537,7 +537,6 @@ const checkFooterPosition = () => {
             github.style.display = 'none';
 
             footerText.style.display = 'flex';
-            copyright.style.display = 'block';
             isExpanded = true;
         }
     } else if (isExpanded) {
@@ -547,7 +546,6 @@ const checkFooterPosition = () => {
         footerSeparator.classList.remove('expanded');
         
         footerText.style.display = 'none';
-        copyright.style.display = 'none';
 
         linkedin.style.display = 'initial';
         discord.style.display = 'initial';

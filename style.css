@@ -39,7 +39,6 @@ body {
 }
 
 
-
 /* Header */
 #hamburgerBox, #hamburgerIcon {
     display: none;
@@ -483,6 +482,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 #aboutMeHeaderBox {
@@ -534,7 +534,7 @@ body {
     width: 27.5vw;
     display: flex;
     flex-direction: column;
-
+    height: 100%;
     align-items: center;
     background-color: var(--backgroundTP);
     box-shadow: 0 0 5px var(--background);
@@ -542,7 +542,7 @@ body {
 }
 
 #softSkills {
-    height: 320px;
+    height: 275px;
     width: 21.5vw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -808,12 +808,14 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
     position: fixed;
     margin: 0 auto;
     height: 50vh;
     width: 100vw;
     transition: all 0.5s ease-in-out;
+}
+#footerSeparator h3 {
+    font-size: 3rem;
 }
 #footerDivider {
     height: 70px;
@@ -844,11 +846,13 @@ body {
 
 #footerBox {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 90vw;
     padding: 0;
 }
+
 #footerHighlight {
     color: rgb(97, 0, 0);
     font-weight: bolder;
@@ -872,12 +876,10 @@ body {
 
 #footerText {
     display: none;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
+
 }
 #copyright {
-    display: none;
     margin: 5px 0 10px 0;
 }
 #docBottom{
@@ -912,13 +914,18 @@ body {
 
 /* Media Queries for responsiveness ans accessibility */
 @media only screen and (max-width: 1242px) {
-
+    #mainSection {
+        gap: 5vh;
+    }
     #aboutMeBox {
         flex-direction: column;
         height: fit-content;
     }
+    #aboutMeToCenter {
+        height: max-content;
+    }
     #aboutMeContent {
-        width: 100%;
+        width: 70%;
         text-align: center;
     }
     #aboutMeHeaderBox {
@@ -927,8 +934,23 @@ body {
     #softSkillsBox {
         height: fit-content;
     }
+    #softSkillsBox {
+        width: 76.5vw;
+    }
+    #softSkills {
+        height: max-content;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        gap: 5px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
 
-
+    }
+    #softSkills li {
+        grid-column: span 1;
+        padding: 15px;
+    }
 }
 @media only screen and (max-width: 1153px) {
     .projectCard {
@@ -951,25 +973,7 @@ body {
     #aboutToCenter {
         margin: 300px 0;
     }
-    #softSkillsBox {
-        width: fit-content;
 
-    }
-    #softSkills {
-        width: 100%;
-        height: max-content;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        gap: 5px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-
-    }
-    #softSkills li {
-        grid-column: span 1;
-        padding: 15px;
-    }
     #contactFormHeaderBox .responseRemove {
         display: none;
     }
@@ -979,6 +983,12 @@ body {
 
 }
 @media only screen and (max-width: 968px) {
+    #mainSection {
+        gap: 10vh;
+    }
+    #projectsToCenter {
+        margin-top: 30vh;
+    }
     #popUpRightBox {
         display: none;
     }
@@ -989,14 +999,20 @@ body {
         display: block;
         text-align: center;
     }
-}
-@media only screen and (max-width: 856px) {
-    #mainSection {
-        gap: 300px;
+    #snakeBox {
+        margin: 0 0 100px 0;
     }
+}
+
+@media only screen and (max-width: 856px) {
+
+    #mainSection {
+        gap: 7vh;
+    }
+
     #imgContainer {
         margin: 0;
-        margin: 50px 0;
+        margin: 100px 0 20px 0;
         height: 250px;
         width: 250px;
         box-shadow: 0 0 10px black;
@@ -1012,9 +1028,10 @@ body {
         padding: 15px;
         grid-column: span 1;
     }
-    #socialmedia {
-        display: none;
+    #contactButton, .projectCardButton {
+        padding: 5px 10px;
     }
+
     .projectCardHeader {
         padding: 5px;
     }
@@ -1028,19 +1045,18 @@ body {
     .responseRemove {
         display: none;
     }
+    #heroArrow {
+        display: none;
+    }
     #aboutToCenter, #projectsToCenter {
         display: flex;
         height: 100vh;
     }
-    #footerSeparator {
-        display: none; 
-    }
+
     #footerToCenter {
-        position: static;
+        margin-top: 150px;
     }
-    #copyright {
-        display: block;
-    }
+
     #contactFormBox .inputField {
         padding: 0;
         margin: 0;
@@ -1049,7 +1065,12 @@ body {
     #contactForm {
         margin: 0;
     }
+}
 
+@media only screen and (max-width: 838px) {
+    #footerSeparator h3 {
+        font-size: 2rem;
+    }
 }
 @media only screen and (max-width: 648px) {
     .h-navs {
@@ -1065,18 +1086,18 @@ body {
     #hamburgerBox {
         position: fixed;
         box-shadow: 0 0 1px black;
-        top: 8.1vh;
-        left: 1px;
+        bottom: 9vh;
+        left: 0;
         z-index: 998;
-        width: 200px;
+        width: 100vw;
         background-color: rgba(220, 202, 172, 0.95);
-        height: 100px;
+        height: fit-content;
     }
     
     #hamburger {
         display: grid;       
         text-align: center;
-        grid-template-rows: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr); 
         align-items: stretch; 
         width: 100%;
         height: 100%; 
@@ -1085,6 +1106,7 @@ body {
     }
     
     .hamburgerNavs {
+        padding: 12px;
         color: black;
         display: flex;
         align-items: center;
@@ -1101,8 +1123,11 @@ body {
 
 
 }
-@media only screen and (max-width: 679px) {
+@media only screen and (max-width: 680px) {
 
+    #mainSection {
+        gap: 33vh;
+    }
     #aboutArrowBox {
         flex-direction: column-reverse;
         gap: 10px;
@@ -1112,7 +1137,9 @@ body {
     }
     #softSkills li {
         grid-column: span 1;
-        padding: 15px;
+    }
+    #softSkillsBox {
+        width: 330px;
     }
     #techStack {
         width: 100%;
@@ -1125,6 +1152,13 @@ body {
         display: none;
     }
 }
+
+
+@media only screen and (max-width: 565px) {
+    #footerText h3 {
+        display: none;
+    }
+}
 @media only screen and (max-width: 517px) {
     h1 {
         font-size: 3rem;
@@ -1134,5 +1168,18 @@ body {
     }
     #aboutMeContent p {
         font-size: 1.1rem;
+    }
+}
+@media only screen and (max-width: 476px) {
+    #footerSeparator h3 {
+        font-size: 1.5rem;
+    }
+    #footerSeparator p {
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 414px) {
+    .tinyResponse {
+        display: none;
     }
 }
