@@ -895,7 +895,9 @@ body {
 .fa-shake {
     animation: shake 2s infinite;
 }
-
+#linkedin {
+    margin-left: 2px;
+}
 @keyframes shake {
     0%, 100% {
         transform: translateX(0);
