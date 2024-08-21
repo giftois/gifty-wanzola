@@ -153,12 +153,12 @@ const darkMode = () => {
     light.style.display = "block";
 
     body.style.cssText = `    
-    background-color:  hsl(250,17%,5%);
+    background-color:  hsl(250,17%,6%);
     color: white;
     `;
     main.style.cssText = `
     box-shadow: 0 0 2px white;
-    background-color:  hsl(250,17%,5%);
+    background-color:  hsl(250,17%,6%);
     `;
     
     header.style.cssText = `
@@ -531,12 +531,13 @@ const checkFooterPosition = () => {
             footerToCenter.classList.add('expanded');
             footerSeparator.style.cssText = `position: absolute;`;
             footerSeparator.classList.add('expanded');
-            footerText.style.display = 'flex';
-            copyright.style.display = 'block';
+
             linkedin.style.display = 'none';
             discord.style.display = 'none';
             github.style.display = 'none';
 
+            footerText.style.display = 'flex';
+            copyright.style.display = 'block';
             isExpanded = true;
         }
     } else if (isExpanded) {
@@ -544,8 +545,10 @@ const checkFooterPosition = () => {
         footerToCenter.classList.remove('expanded');
         footerSeparator.style.cssText = `position: absolute;`;
         footerSeparator.classList.remove('expanded');
+        
         footerText.style.display = 'none';
         copyright.style.display = 'none';
+
         linkedin.style.display = 'initial';
         discord.style.display = 'initial';
         github.style.display = 'initial';
