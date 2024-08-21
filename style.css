@@ -738,7 +738,7 @@ body {
     color: black;
 }
 /* ? Card icon styling */
-#diceIcon, #snakeIcon {
+#diceIcon, #snakeIcon, #eightBallIcon {
     font-size: 2.5rem;
     color: rgb(97, 0, 0);
 }
@@ -746,7 +746,7 @@ body {
     background-color: hsl(36, 43%, 78%);
     box-shadow: 0 0 5px var(--background);
 }
-#snakeButton, #diceButton {
+#snakeButton, #diceButton, #eightBallButton {
     transition: all 0.2s ease-in-out;
     background-color: goldenrod;
     border: black 3px solid;
@@ -756,14 +756,14 @@ body {
     padding: 10px 15px;
     cursor: pointer;
 }
-#snakeButton:hover, #diceButton:hover {
+#snakeButton:hover, #diceButton:hover, #eightBallButton:hover {
     transition: all 0.3s ease-in-out;
     background-color: rgba(20,19,27,0.95);
     box-shadow: 0 0 2px black;
     border: var(--backgroundTP) solid 3px;
     color: white;
 }
-#snakeButton:active, #diceButton:active {
+#snakeButton:active, #diceButton:active, #eightBallButton:active {
     opacity: 50%;
 }
 
@@ -999,7 +999,7 @@ body {
         display: block;
         text-align: center;
     }
-    #snakeBox {
+    #eightBallBox {
         margin: 0 0 100px 0;
     }
 }

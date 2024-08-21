@@ -74,17 +74,20 @@ const projectsHeader = document.getElementById("projectsHeader");
 const projectsToCenter = document.getElementById("projectsToCenter");
 const projectCard = document.getElementsByClassName("projectCard");
 
+const eightBallHeaderBox = document.getElementById("eightBallHeaderBox");
+const eightBallHeader = document.getElementById("eightBallHeader");
+const eightBallBox = document.getElementById("eightBallBox");
+const eightBallIcon = document.getElementById("eightBallIcon");
+
 const diceHeaderBox = document.getElementById("diceHeaderBox");
-const snakeHeaderBox = document.getElementById("snakeHeaderBox");
-
-const snakeBox = document.getElementById("snakeBox");
+const diceHeader = document.getElementById("diceHeader");
 const diceBox = document.getElementById("diceBox");
-
-const snakeIcon = document.getElementById("snakeIcon");
 const diceIcon = document.getElementById("diceIcon");
 
+const snakeHeaderBox = document.getElementById("snakeHeaderBox");
 const snakeHeader = document.getElementById("snakeHeader");
-const diceHeader = document.getElementById("diceHeader");
+const snakeBox = document.getElementById("snakeBox");
+const snakeIcon = document.getElementById("snakeIcon");
 
 
 //  ! Footer Section Variable Declarations
@@ -262,6 +265,19 @@ const darkMode = () => {
     color: black;
     box-shadow: 0 0 1px white;
     `;
+    eightBallBox.style.cssText = `
+    box-shadow: 0 0 2px white;
+    background-color: rgba(20,19,27,0.95);
+    `;
+    eightBallIcon.style.cssText = `
+    color: goldenrod;
+    `;
+    eightBallHeader.style.cssText = `
+    background-color: var(--backgroundTP);
+    box-shadow: 0 0 1px white;
+    border: 1px solid black;
+    color: black;
+    `;
     diceBox.style.cssText = `
     box-shadow: 0 0 2px white;
     background-color: rgba(20,19,27,0.95);
@@ -420,6 +436,19 @@ const lightMode = () => {
     box-shadow: '';
     color: '';
     border: '';    
+    `;
+    eightBallBox.style.cssText = `
+    box-shadow: '';
+    background-color: '';
+    `;
+    eightBallIcon.style.cssText = `
+    color: '';
+    `;
+    eightBallHeader.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    color: '';
+    border: '';
     `;
     diceBox.style.cssText = `
     box-shadow: '';
