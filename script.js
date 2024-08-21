@@ -101,6 +101,7 @@ const discord = document.getElementById("discord");
 const github = document.getElementById("github");
 const footerHighlight = document.getElementById("footerHighlight");
 const footerText = document.getElementById("footerText");
+const thankYou = document.getElementById("thankYou");
 const copyright = document.getElementById("copyright");
 
 // ! Event handling Functions
@@ -300,6 +301,9 @@ const darkMode = () => {
     background-color: hsl(250, 17%, 5%);
     box-shadow: 0 0 2px white;
     `
+    thankYou.style.cssText = `
+    color: goldenrod;
+    `
     discord.style.color = "var(--primaryLighter)";
     github.style.color = "var(--primaryLighter)";
     linkedin.style.color = "var(--primaryLighter)";
@@ -470,6 +474,9 @@ const lightMode = () => {
     footerSeparator.style.cssText = `
     background-color: (var--primaryLighter);
     box-shadow: '';
+    `
+    thankYou.style.cssText = `
+    color: '';
     `
     discord.style.color = "var(--darkModeDark)";
     github.style.color = "var(--darkModeDark)";

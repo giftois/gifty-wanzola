@@ -742,7 +742,7 @@ body {
     font-size: 2.5rem;
     color: rgb(97, 0, 0);
 }
-#diceBox, #snakeBox {
+#diceBox, #snakeBox, #eightBallBox {
     background-color: hsl(36, 43%, 78%);
     box-shadow: 0 0 5px var(--background);
 }
@@ -877,7 +877,9 @@ body {
 #footerText {
     display: none;
     text-align: center;
-
+}
+#thankYou {
+    color: rgb(97, 0, 0);
 }
 #copyright {
     margin: 5px 0 10px 0;
