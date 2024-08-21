@@ -533,6 +533,10 @@ const checkFooterPosition = () => {
             footerSeparator.classList.add('expanded');
             footerText.style.display = 'flex';
             copyright.style.display = 'block';
+            linkedin.style.display = 'none';
+            discord.style.display = 'none';
+            github.style.display = 'none';
+
             isExpanded = true;
         }
     } else if (isExpanded) {
@@ -542,6 +546,10 @@ const checkFooterPosition = () => {
         footerSeparator.classList.remove('expanded');
         footerText.style.display = 'none';
         copyright.style.display = 'none';
+        linkedin.style.display = 'initial';
+        discord.style.display = 'initial';
+        github.style.display = 'initial';
+
         isExpanded = false;
     }
 };

@@ -831,17 +831,17 @@ body {
 }
 #footerSeparator.expanded {
     height: 15vh;
-    transition: height 2s ease-in-out;
+    transition: height 3s ease-in-out;
 }
 #footerToCenter.expanded {
     height: 14.95vh; 
-    transition: height 2s ease-in-out;
+    transition: height 3s ease-in-out;
 }
 
 #footerBox {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 90vw;
     padding: 0;
@@ -854,6 +854,7 @@ body {
 #socialmedia {
     display: flex;
     gap: 25px;
+    justify-self: end;
 }
 
 .fa-discord {
