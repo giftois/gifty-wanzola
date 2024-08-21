@@ -708,7 +708,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 125vh;
     gap: 50px;
     width: 75vw;
 
@@ -915,7 +915,7 @@ body {
 /* Media Queries for responsiveness ans accessibility */
 @media only screen and (max-width: 1242px) {
     #mainSection {
-        gap: 5vh;
+        gap: 30vh;
     }
     #aboutMeBox {
         flex-direction: column;
@@ -957,6 +957,9 @@ body {
         grid-column: span 2;
         text-align: center;
     }
+    #projectsToCenter {
+        margin-top: 20vh;
+    }
 }
 @media only screen and (max-width: 1118px) {
     #heroBox {
@@ -984,10 +987,10 @@ body {
 }
 @media only screen and (max-width: 968px) {
     #mainSection {
-        gap: 10vh;
+        gap: 30vh;
     }
     #projectsToCenter {
-        margin-top: 30vh;
+        margin-top: 50vh;
     }
     #popUpRightBox {
         display: none;
@@ -1005,10 +1008,6 @@ body {
 }
 
 @media only screen and (max-width: 856px) {
-
-    #mainSection {
-        gap: 7vh;
-    }
 
     #imgContainer {
         margin: 0;
