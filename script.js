@@ -84,6 +84,11 @@ const diceHeader = document.getElementById("diceHeader");
 const diceBox = document.getElementById("diceBox");
 const diceIcon = document.getElementById("diceIcon");
 
+const LPHeaderBox = document.getElementById("LPHeaderBox");
+const LPHeader = document.getElementById("LPHeader");
+const LPBox = document.getElementById("LPBox");
+const LPIcon = document.getElementById("LPIcon");
+
 const snakeHeaderBox = document.getElementById("snakeHeaderBox");
 const snakeHeader = document.getElementById("snakeHeader");
 const snakeBox = document.getElementById("snakeBox");
@@ -293,6 +298,21 @@ const darkMode = () => {
     color: black;
     `;
 
+    LPBox.style.cssText = `
+    box-shadow: 0 0 2px white;
+    background-color: rgba(20,19,27,0.95);
+    `;
+
+    LPIcon.style.cssText = `
+    color: goldenrod;
+    `;
+    LPHeader.style.cssText = `
+    background-color: var(--backgroundTP);
+    box-shadow: 0 0 1px white;
+    border: 1px solid black;
+    color: black;
+    `;
+
     footerToCenter.style.cssText = `
     background-color: hsl(250, 17%, 5%);
     box-shadow: 0 0 2px white;
@@ -458,10 +478,23 @@ const lightMode = () => {
     box-shadow: '';
     background-color: '';
     `;
-    diceIcon.style.cssText = `
+    LPIcon.style.cssText = `
     color: '';
     `;
-    diceHeader.style.cssText = `
+    LPHeader.style.cssText = `
+    background-color: '';
+    box-shadow: '';
+    color: '';
+    border: '';    
+    `;
+    LPBox.style.cssText = `
+    box-shadow: '';
+    background-color: '';
+    `;
+    LPIcon.style.cssText = `
+    color: '';
+    `;
+    LPHeader.style.cssText = `
     background-color: '';
     box-shadow: '';
     color: '';

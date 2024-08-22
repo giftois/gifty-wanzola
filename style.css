@@ -738,15 +738,15 @@ body {
     color: black;
 }
 /* ? Card icon styling */
-#diceIcon, #snakeIcon, #eightBallIcon {
+#diceIcon, #snakeIcon, #eightBallIcon, #LPIcon {
     font-size: 2.5rem;
     color: rgb(97, 0, 0);
 }
-#diceBox, #snakeBox, #eightBallBox {
+#diceBox, #snakeBox, #eightBallBox, #LPBox  {
     background-color: hsl(36, 43%, 78%);
     box-shadow: 0 0 5px var(--background);
 }
-#snakeButton, #diceButton, #eightBallButton {
+#snakeButton, #diceButton, #eightBallButton, #LPButton {
     transition: all 0.2s ease-in-out;
     background-color: goldenrod;
     border: black 3px solid;
@@ -756,14 +756,14 @@ body {
     padding: 10px 15px;
     cursor: pointer;
 }
-#snakeButton:hover, #diceButton:hover, #eightBallButton:hover {
+#snakeButton:hover, #diceButton:hover, #eightBallButton:hover, #LPButton:hover{
     transition: all 0.3s ease-in-out;
     background-color: rgba(20,19,27,0.95);
     box-shadow: 0 0 2px black;
     border: var(--backgroundTP) solid 3px;
     color: white;
 }
-#snakeButton:active, #diceButton:active, #eightBallButton:active {
+#snakeButton:active, #diceButton:active, #eightBallButton:active, #LPButton:active {
     opacity: 50%;
 }
 
@@ -960,7 +960,7 @@ body {
         text-align: center;
     }
     #projectsToCenter {
-        margin-top: 20vh;
+        margin: 60vh 0 20vh 0;
     }
 }
 @media only screen and (max-width: 1118px) {
@@ -1121,8 +1121,9 @@ body {
     .hamburgerNavs:active {
         opacity: 50%;
     }
-
-
+    #projectsToCenter {
+        margin: 80vh 0 30vh 0;
+    }
 }
 @media only screen and (max-width: 680px) {
 
@@ -1178,9 +1179,13 @@ body {
     #footerSeparator p {
         font-size: 0.8rem;
     }
+    #projectsToCenter {
+        margin: 90vh 0 40vh 0;
+    }
 }
 @media only screen and (max-width: 414px) {
     .tinyResponse {
         display: none;
     }
+
 }
