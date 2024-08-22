@@ -178,7 +178,7 @@ const darkMode = () => {
     color: var(--backgroundTP);
     `
     hamburgerBox.style.cssText = `
-    background-color: rgba(20,19,27,0.95);
+    background-color: rgba(20,19,27);
     box-shadow: 0 0 2px white;
     `
     burgerAboutNav.style.cssText = `

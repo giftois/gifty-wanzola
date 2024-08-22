@@ -1094,7 +1094,7 @@ body {
         left: 0;
         z-index: 998;
         width: 100vw;
-        background-color: rgba(220, 202, 172, 0.95);
+        background-color: rgba(220, 202, 172);
         height: fit-content;
     }
     
