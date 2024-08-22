@@ -478,10 +478,10 @@ const lightMode = () => {
     box-shadow: '';
     background-color: '';
     `;
-    LPIcon.style.cssText = `
+    diceIcon.style.cssText = `
     color: '';
     `;
-    LPHeader.style.cssText = `
+    diceHeader.style.cssText = `
     background-color: '';
     box-shadow: '';
     color: '';
