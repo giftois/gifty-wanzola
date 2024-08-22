@@ -1066,6 +1066,9 @@ body {
     #contactForm {
         margin: 0;
     }
+    #projectsToCenter {
+        margin: 80vh 0 40vh 0;
+    }
 }
 
 @media only screen and (max-width: 838px) {
@@ -1087,7 +1090,7 @@ body {
     #hamburgerBox {
         position: fixed;
         box-shadow: 0 0 1px black;
-        bottom: 18vh;
+        bottom: 10vh;
         left: 0;
         z-index: 998;
         width: 100vw;
